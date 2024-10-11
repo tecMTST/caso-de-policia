@@ -25,6 +25,15 @@ window/size/viewport_height=1920
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "blue",
+"res://Scripts/": "purple",
+"res://docs/": "gray",
+"res://export/": "gray"
+}
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true

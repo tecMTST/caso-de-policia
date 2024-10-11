@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgms6s5c6847n"]
+
+[ext_resource type="Script" path="res://Scenes/GameLoop/GameLoop.gd" id="1_7bs80"]
+[ext_resource type="PackedScene" uid="uid://cc8qq8nuav8ol" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.tscn" id="2_aaawu"]
+
+[node name="GameLoop" type="Node2D"]
+script = ExtResource("1_7bs80")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 305.0
+offset_top = 726.0
+offset_right = 784.0
+offset_bottom = 922.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Game loop![/center]"
+
+[node name="VitoriaCTA" type="Button" parent="."]
+offset_left = 172.0
+offset_top = 949.0
+offset_right = 416.0
+offset_bottom = 1045.0
+theme_override_font_sizes/font_size = 55
+text = "Vitoria"
+
+[node name="DerrotaCTA" type="Button" parent="."]
+offset_left = 647.0
+offset_top = 949.0
+offset_right = 891.0
+offset_bottom = 1045.0
+theme_override_font_sizes/font_size = 55
+text = "Derrota"
+
+[node name="PauseCTA" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 45.0
+offset_right = 1049.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 35
+text = "PAUSE"
+
+[node name="PauseMenuOverlay" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseMenuOverlay" instance=ExtResource("2_aaawu")]
+process_mode = 3
+visible = false
+
+[connection signal="pressed" from="VitoriaCTA" to="." method="_on_vitoria_cta_pressed"]
+[connection signal="pressed" from="DerrotaCTA" to="." method="_on_derrota_cta_pressed"]
+[connection signal="pressed" from="PauseCTA" to="." method="_on_pause_cta_pressed"]
+[connection signal="paused" from="PauseMenuOverlay/PauseMenu" to="." method="_on_pause_menu_paused"]
+[connection signal="resumed" from="PauseMenuOverlay/PauseMenu" to="." method="_on_pause_menu_resumed"]

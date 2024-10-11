@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cja8c156dt46b"]
+
+[ext_resource type="Script" path="res://Scenes/About/About.gd" id="1_tlm38"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlm38")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 674.0
+offset_right = 980.0
+offset_bottom = 900.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Nós somos o NT-MTST[/center]"
+
+[node name="VoltarMenuCTA" type="Button" parent="."]
+offset_left = 275.0
+offset_top = 915.0
+offset_right = 799.0
+offset_bottom = 1046.0
+theme_override_font_sizes/font_size = 60
+text = "Voltar ao menu"
+
+[connection signal="pressed" from="VoltarMenuCTA" to="." method="_on_voltar_menu_cta_pressed"]

@@ -1,8 +1,8 @@
 name: Production release to itch.io
 
 on:
-  push:
-    branches: ["main"]
+  release:
+    types: [published]
 
   workflow_dispatch:
 

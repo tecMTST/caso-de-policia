@@ -1,4 +1,5 @@
-Caso de pol�cia - documentos
+Caso de polícia - documentos
 ---
 
 * [Cenas](./cenas.md)
+* [Simulação](./simulação.md)

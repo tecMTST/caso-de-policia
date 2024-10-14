@@ -1,0 +1,19 @@
+﻿Id;Candidate;Text;Cost;Criminality;Popularity
+1;Lurdes;Remover câmera dos uniformes policiais;3;1;-3
+2;Douces;Investigar 3 lojas de revenda de celulares;2;-2;2
+3;Douces;Treinamento mais moderno para os agentes;4;-4;2
+4;Lurdes;Armamento mais pesado para os policiais;5;0;1
+5;Lurdes;Abordagem mais violentas em zonas de conflito;2;-1;-3
+6;Douces;Ampliação de patrulhas contra a violência doméstica ;3;-3;2
+7;Douces;Policiamento de proximidade em zonas mais conflitivas;2;-3;3
+8;Douces;Contratação de psicólogos para policiais com traumas;2;-1;0
+9;Lurdes;Tirar patrulhas para violência doméstica e colocá-las na cracolândia;2;-1;-3
+10;Lurdes;Criação de uma força especial para acabar com a cracolândia;8;-1;2
+11;Douces;Ampliação de médicos, psicólogos e assistentes sociais na área da cracolândia;4;-3;3
+12;Douces;Fazer ronda policial perto dos pontos de ônibus da cidade;4;-5;2
+13;Douces;GCM na porta das escolas em horários de entrada e saída;2;-1;3
+14;Lurdes;Tomar as barracas das pessoas dormindo nas ruas;1;2;-1
+15;Lurdes;Mandar a GCM proibir a distribuição de marmitas na cracolândia;2;2;-2
+16;Douces;Limpar o centro histórico de São Paulo;5;-5;3
+17;Lurdes;Iluminação do centro histórico com lâmpadas de LED nas cores verde e amarelo;7;0;0
+18;Lurdes;Falar com meu cunhado do PCC pra maneirar no centro;12;-7;-5

@@ -39,11 +39,12 @@ jobs:
 
           mv vendor/coi.min.js build/coi.min.js
           sed -i '3 i <script src="coi.min.js"></script>' build/index.html
+        working-directory: ./projeto
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/
+          path: projeto/build/
 
       - name: Deploy to GitHub Pages
         id: deployment

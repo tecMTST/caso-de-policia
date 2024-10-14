@@ -39,12 +39,13 @@ jobs:
           rm -rf build
           mkdir build/
           mv build.zip build/artifact.zip
+        working-directory: ./projeto
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: build/
+          path: projeto/build/
 
   deploy:
     needs: build

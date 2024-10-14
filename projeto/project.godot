@@ -26,6 +26,10 @@ window/size/viewport_height=1920
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/TimedLabel/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

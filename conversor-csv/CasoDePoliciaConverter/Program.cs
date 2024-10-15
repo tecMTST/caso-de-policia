@@ -57,22 +57,31 @@ static void RunOptions(Options opts)
         }
         gameData.InitialStatus.Cash = float.Parse(initialCash);
 
-        Console.WriteLine("Tempo de duração do dia em segundos (2):");
-        var dayTime = Console.ReadLine();
-        if (string.IsNullOrEmpty(dayTime) || !float.TryParse(dayTime, out var _))
+        Console.WriteLine("Tempo de duração da transicao em segundos (2):");
+        var transitionTime = Console.ReadLine();
+        if (string.IsNullOrEmpty(transitionTime) || !float.TryParse(transitionTime, out var _))
         {
-            dayTime = "2";
+            transitionTime = "2";
         }
-        gameData.InitialStatus.DayTime = float.Parse(dayTime);
+        gameData.InitialStatus.TransitionTime = float.Parse(transitionTime);
+
+        Console.WriteLine("Limite de dias (7):");
+        var daysLimit = Console.ReadLine();
+        if (string.IsNullOrEmpty(daysLimit) || !float.TryParse(daysLimit, out var _))
+        {
+            daysLimit = "7";
+        }
+        gameData.InitialStatus.DaysLimit = float.Parse(daysLimit);
     }
     else
     {
         newsFile = opts.News;
         suggestionFile = opts.Suggestions;
-        gameData.InitialStatus.DayTime = opts.DayTime;
+        gameData.InitialStatus.TransitionTime = opts.TransitionTime;
         gameData.InitialStatus.Cash = opts.InitialCash;
         gameData.InitialStatus.Popularity = opts.InitialPopularity;
         gameData.InitialStatus.Criminality = opts.InitialCriminality;
+        gameData.InitialStatus.DaysLimit = opts.DaysLimit;
     }
 
     foreach (var line in CsvReader.ReadFromText(File.ReadAllText(newsFile)))

@@ -232,9 +232,10 @@
 	}
   ],
   "InitialStatus": {
-	"Criminality": 50,
+	"Criminality": 70,
 	"Popularity": 50,
-	"Cash": 20,
-	"DayTime": 2
+	"Cash": 100,
+	"TransitionTime": 2,
+	"DaysLimit": 7
   }
 }

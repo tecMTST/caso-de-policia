@@ -1,4 +1,5 @@
 extends Label
+class_name TimedLabel
 
 signal Start
 signal KeyStroke(key: String)

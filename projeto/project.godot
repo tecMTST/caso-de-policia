@@ -14,6 +14,7 @@ config/name="Caso de policia"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
+config/icon="res://icon.svg"
 
 [autoload]
 
@@ -33,6 +34,7 @@ enabled=PackedStringArray("res://addons/TimedLabel/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Assets/": "green",
 "res://Scenes/": "blue",
 "res://Scripts/": "purple",
 "res://docs/": "gray",

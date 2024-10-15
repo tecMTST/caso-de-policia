@@ -1,0 +1,188 @@
+[gd_scene load_steps=17 format=3 uid="uid://b2en35wgf36dm"]
+
+[ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_qko8e"]
+[ext_resource type="Texture2D" uid="uid://de3laniybw073" path="res://Assets/Imagens/lurdes_neutro.png" id="2_xq3kg"]
+[ext_resource type="Texture2D" uid="uid://dkkg7r2ygm26t" path="res://Assets/Imagens/lurdes_sim.png" id="3_n8yps"]
+[ext_resource type="Texture2D" uid="uid://bqh7skrugea8w" path="res://Assets/Imagens/lurdes_nao.png" id="4_820i1"]
+[ext_resource type="Texture2D" uid="uid://cwrt5n1v708tu" path="res://Assets/Imagens/lurdes_proposta.svg" id="5_1f2ds"]
+[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_kg6qv"]
+[ext_resource type="Texture2D" uid="uid://np8f8kwwyscp" path="res://Assets/Imagens/lurdes_nome.svg" id="6_su48b"]
+[ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="8_0c5g2"]
+[ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_oru4f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jxtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xq3kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n8yps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_820i1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
+font = ExtResource("6_kg6qv")
+font_size = 53
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpsc"]
+size = Vector2(900, 500)
+
+[sub_resource type="Animation" id="Animation_abt0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v6x68"]
+resource_name = "entrar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(375, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gkias"]
+resource_name = "sair"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(375, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcpse"]
+_data = {
+"RESET": SubResource("Animation_abt0u"),
+"entrar": SubResource("Animation_v6x68"),
+"sair": SubResource("Animation_gkias")
+}
+
+[node name="Lourdes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qko8e")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(375, 0)
+sprite_frames = SubResource("SpriteFrames_8jxtn")
+speed_scale = 0.0
+
+[node name="Nome" type="TextureRect" parent="Sprite"]
+offset_left = -64.0
+offset_top = -233.0
+offset_right = 314.0
+offset_bottom = 12.0
+texture = ExtResource("6_su48b")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Balao" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -740.0
+offset_top = -268.0
+offset_right = -84.792
+offset_bottom = 197.0
+texture = ExtResource("5_1f2ds")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Texto" type="Label" parent="Balao"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 27.0
+offset_right = 548.0
+offset_bottom = 333.0
+label_settings = SubResource("LabelSettings_hnq51")
+autowrap_mode = 3
+script = ExtResource("8_0c5g2")
+Interval = 0.02
+Interval_Variation = 0.0
+
+[node name="Custo" type="HBoxContainer" parent="Balao"]
+offset_left = 49.0
+offset_top = 302.0
+offset_right = 340.0
+offset_bottom = 357.0
+
+[node name="Custo1" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_oru4f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo2" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_oru4f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo3" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_oru4f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo4" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_oru4f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo5" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_oru4f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Botao" type="TouchScreenButton" parent="."]
+position = Vector2(-293, -42)
+shape = SubResource("RectangleShape2D_ltpsc")
+shape_visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_lcpse")
+}

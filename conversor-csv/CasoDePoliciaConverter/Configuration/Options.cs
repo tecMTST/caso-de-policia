@@ -22,7 +22,10 @@ namespace CasoDePoliciaConverter.Configuration
         [Option('d', "dinheiro", Required = false, HelpText = "dinheiro inicial", Default = 50)]
         public int InitialCash { get; set; } = 50;
 
-        [Option('t', "tempo", Required = false, HelpText = "tempo de transição do dia", Default = 2)]
-        public float DayTime { get; set; } = 2;
+        [Option('t', "tempo", Required = false, HelpText = "tempo das transições", Default = 2)]
+        public float TransitionTime { get; set; } = 2;
+
+        [Option('d', "dias", Required = false, HelpText = "limite de dias", Default = 7)]
+        public float DaysLimit { get; set; } = 2;
     }
 }

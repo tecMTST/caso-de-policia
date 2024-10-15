@@ -1,0 +1,190 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnvrhukyxun15"]
+
+[ext_resource type="Texture2D" uid="uid://gicrwp65p0dd" path="res://Assets/Imagens/douces_neutro.png" id="1_iexl0"]
+[ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_j6djn"]
+[ext_resource type="Texture2D" uid="uid://clxarrcklphir" path="res://Assets/Imagens/docues_sim.png" id="2_yjhpy"]
+[ext_resource type="Texture2D" uid="uid://dfqcfbixq4ovc" path="res://Assets/Imagens/douces_nao.png" id="3_8j5bu"]
+[ext_resource type="Texture2D" uid="uid://c1fu1ad3ngfa5" path="res://Assets/Imagens/douces_proposta.svg" id="4_4qcex"]
+[ext_resource type="Texture2D" uid="uid://dwrwu2k3fnqr5" path="res://Assets/Imagens/douces_nome.svg" id="5_4jo5y"]
+[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_dp6b4"]
+[ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="7_yjxv3"]
+[ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_p46fe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xo644"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iexl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yjhpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8j5bu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
+font = ExtResource("6_dp6b4")
+font_size = 53
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpsc"]
+size = Vector2(1000, 500)
+
+[sub_resource type="Animation" id="Animation_c6yii"]
+resource_name = "entrar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-375, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cifp3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n4fi1"]
+resource_name = "sair"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-375, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ps08h"]
+_data = {
+"RESET": SubResource("Animation_cifp3"),
+"entrar": SubResource("Animation_c6yii"),
+"sair": SubResource("Animation_n4fi1")
+}
+
+[node name="Douces" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j6djn")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-375, 0)
+sprite_frames = SubResource("SpriteFrames_xo644")
+speed_scale = 0.0
+
+[node name="Nome" type="TextureRect" parent="Sprite"]
+offset_left = -219.0
+offset_top = -233.0
+offset_right = 159.0
+offset_bottom = 12.0
+texture = ExtResource("5_4jo5y")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Balao" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 83.0
+offset_top = -268.0
+offset_right = 738.208
+offset_bottom = 197.0
+texture = ExtResource("4_4qcex")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Texto" type="Label" parent="Balao"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 27.0
+offset_right = 640.0
+offset_bottom = 333.0
+label_settings = SubResource("LabelSettings_hnq51")
+autowrap_mode = 3
+script = ExtResource("7_yjxv3")
+Interval = 0.02
+Interval_Variation = 0.0
+
+[node name="Custo" type="HBoxContainer" parent="Balao"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 307.0
+offset_right = 596.0
+offset_bottom = 362.0
+alignment = 2
+
+[node name="Custo1" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_p46fe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo2" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_p46fe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo3" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_p46fe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo4" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_p46fe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Custo5" type="TextureRect" parent="Balao/Custo"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_p46fe")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Botao" type="TouchScreenButton" parent="."]
+position = Vector2(254, -41)
+shape = SubResource("RectangleShape2D_ltpsc")
+shape_visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_ps08h")
+}

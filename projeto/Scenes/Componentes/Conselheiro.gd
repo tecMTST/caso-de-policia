@@ -79,5 +79,6 @@ func DefinirExpressao(expressao: Expressoes):
 
 func _on_botao_pressed() -> void:	
 	if Ativo:
+		Ativo = false
 		DefinirExpressao(Expressoes.Sim)
 		emit_signal("Selecionar")

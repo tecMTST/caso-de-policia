@@ -10,7 +10,7 @@ func _ready() -> void:
 func DefinirResultado():
 	
 	if EstadoGlobal.Inclinacao < 0 and EstadoGlobal.Dinheiro <= 0:
-		texto.text = EstadoGlobal.GameData.Configuracoes.TextoDerrota
+		texto.text = EstadoGlobal.GameData.Configuracoes.TextoDerrotaDinheiro
 		background.Emitir(false, true, false, false)
 		return
 	

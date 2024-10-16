@@ -65,6 +65,9 @@ func _ready() -> void:
 	background.TempoTransicao = gameData.Configuracoes.TempoTransicao
 	tempoEspera = gameData.Configuracoes.TempoTransicao
 	timerEspera = tempoEspera	
+	progress_crime.value = criminalidade
+	progress_dinheiro.value = dinheiro
+	progress_popularidade.value = popularidade
 
 func _process(delta: float) -> void:
 	match estado:
@@ -108,6 +111,7 @@ func ProcessarMudarTarde():
 	douces.EsconderTexto()
 	lourdes.EsconderTexto()
 	background.TransicaoTarde(popuUp, popuDown, crimeUp, custoUp)
+	AnimarBarras()
 
 func ProcessarDefinirSugestao():
 	var disponiveisA = gameData.Sugestoes.filter(func (i : Sugestao) : return i.Conselheiro == 'Douces' and not sugestoesUsadas.has(i.Id))
@@ -167,15 +171,16 @@ func DefinirJogo():
 	if turno == Turnos.Manha:
 		texto_turno.text = "Manhã"
 	else:
-		texto_turno.text = "Tarde"
-	
-	progress_crime.value = criminalidade
-	progress_dinheiro.value = dinheiro
-	progress_popularidade.value = popularidade
+		texto_turno.text = "Tarde"	
 		
 	if dinheiro <= 0 or popularidade <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
 		FinalizarJogo()
 		
+func AnimarBarras():
+	create_tween().tween_property(progress_crime, "value", criminalidade, 0.5)
+	create_tween().tween_property(progress_dinheiro, "value", dinheiro, 0.5)
+	create_tween().tween_property(progress_popularidade, "value", popularidade, 0.5)
+	
 func FinalizarJogo():
 	EstadoGlobal.Criminalidade = criminalidade
 	EstadoGlobal.Popularidade = popularidade

@@ -109,22 +109,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array()
 }
 
-[sub_resource type="Animation" id="Animation_gkias"]
-resource_name = "sair"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(375, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_wfe8c"]
 resource_name = "idle"
 length = 2.0
@@ -152,12 +136,43 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2)
 }
 
+[sub_resource type="Animation" id="Animation_gkias"]
+resource_name = "sair"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(375, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcpse"]
 _data = {
 "RESET": SubResource("Animation_abt0u"),
 "entrar": SubResource("Animation_v6x68"),
 "idle": SubResource("Animation_wfe8c"),
 "sair": SubResource("Animation_gkias")
+}
+
+[sub_resource type="Animation" id="Animation_lg1aq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_7juhn"]
@@ -175,21 +190,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_lg1aq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81toi"]

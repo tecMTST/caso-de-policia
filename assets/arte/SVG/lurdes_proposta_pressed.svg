@@ -1,77 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="439.89862mm"
-   height="344.86871mm"
-   viewBox="0 0 439.89862 344.86871"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="lurdes_proposta_pressed.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.25606581"
-     inkscape:cx="386.61937"
-     inkscape:cy="681.46545"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-10.054167,4.7624992)">
-    <g
-       id="g4"
-       transform="matrix(0.26458333,0,0,0.26458333,29.457717,41.958424)">
-      <rect
-         class="cls-1"
-         width="1369.15"
-         height="837.23999"
-         rx="151.14"
-         ry="151.14"
-         id="rect1"
-         x="0"
-         y="0"
-         style="fill:#f16060" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:4.134;stroke-dasharray:none"
-         d="M 66.389171,96.052412 -72.577778,41.235286"
-         id="path1"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:4.134;stroke-dasharray:none"
-         d="M 90.402275,-13.419092 -64.270371,-175.15441"
-         id="path2"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:4.134;stroke-dasharray:none"
-         d="M 100.39041,807.60557 21.627586,863.61159"
-         id="path3"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:4.134;stroke-dasharray:none"
-         d="M 154.32634,857.54625 45.599108,981.47158"
-         id="path4"
-         sodipodi:nodetypes="cc" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1587.69 1127.28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a03d3e;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer_2">
+    <g>
+      <rect class="cls-1" x="0" width="1369.15" height="837.24" rx="151.14" ry="151.14"/>
+      <polygon class="cls-1" points="1112.96 747.94 1307.6 1127.28 1587.69 937.61 1350.32 990.05 1203.16 709.96 1112.96 747.94"/>
     </g>
   </g>
 </svg>

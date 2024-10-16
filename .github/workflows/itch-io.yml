@@ -16,13 +16,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  generate-gamedata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate gamedata
+        run: |
+          php conversor-csv/convert.php
+
+          cat ./projeto/Scripts/Data/GameData.json
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gamedata
+          path: ./projeto/Scripts/Data/GameData.json
+
   build:
     runs-on: ubuntu-latest
+    needs: generate-gamedata
     container:
       image: nawarian/godot:4.3-stable
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Download generated gamedata
+        uses: actions/download-artifact@v4
+        with:
+          name: gamedata
+          path: ./projeto/Scripts/Data/
 
       - name: Build web
         env:
@@ -63,4 +87,3 @@ jobs:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: |
           /app/butler push build/artifact.zip ntmtst/caso-de-policia:html5
-

@@ -1,78 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="440.37827mm"
-   height="339.20087mm"
-   viewBox="0 0 440.37826 339.20087"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="douces_proposta_pressed.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.36213174"
-     inkscape:cx="742.8236"
-     inkscape:cy="730.39719"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(144.19822,9.5249803)">
-    <g
-       id="g2"
-       transform="matrix(0.26458333,0,0,0.26458333,-144.33814,31.911132)">
-      <rect
-         class="cls-1"
-         x="218.53999"
-         y="0"
-         width="1369.15"
-         height="837.23999"
-         rx="151.14"
-         ry="151.14"
-         transform="rotate(180,903.11,418.62)"
-         id="rect1"
-         style="fill:#8dbeb2" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:5.85325;stroke-dasharray:none"
-         d="M 1499.6112,54.90878 1664.5903,10.129856"
-         id="path1"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:5.85325;stroke-dasharray:none"
-         d="M 1443.4372,-24.498335 1647.9211,-152.12628"
-         id="path2"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:5.85325;stroke-dasharray:none"
-         d="m 1475.3339,799.7717 158.0412,55.95486"
-         id="path3"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="opacity:0.998192;fill:#000000;stroke:#000000;stroke-width:5.85325;stroke-dasharray:none"
-         d="m 1389.0829,875.63591 180.2114,157.77179"
-         id="path4"
-         sodipodi:nodetypes="cc" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1587.69 1127.28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5d8179;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer_2">
+    <g>
+      <rect class="cls-1" x="218.54" y="0" width="1369.15" height="837.24" rx="151.14" ry="151.14" transform="translate(1806.22 837.24) rotate(-180)"/>
+      <polygon class="cls-1" points="474.73 747.94 280.09 1127.28 0 937.61 237.36 990.05 384.53 709.96 474.73 747.94"/>
     </g>
   </g>
 </svg>

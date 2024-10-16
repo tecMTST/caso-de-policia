@@ -17,14 +17,16 @@ func _ready() -> void:
 	fundo.color = CorManha
 	
 func TransicaoTarde(popuUp : bool, popuDown : bool, crimeUp : bool, custoUp : bool):	
-	popularidade_up.emitting = popuUp
-	popularidade_down.emitting = popuDown
-	criminalidade.emitting = crimeUp
-	custo.emitting = custoUp	
+	Emitir(popuUp, popuDown, crimeUp, custoUp)	
 	create_tween().tween_property(fundo, "color", CorTarde, TempoTransicao)
 	await get_tree().create_timer(TempoTransicao).timeout
 	Finalizar()
 	
+func Emitir(popuUp : bool, popuDown : bool, crimeUp : bool, custoUp : bool):
+	popularidade_up.emitting = popuUp
+	popularidade_down.emitting = popuDown
+	criminalidade.emitting = crimeUp
+	custo.emitting = custoUp	
 	
 func TransicaoManha():
 	create_tween().tween_property(fundo, "color", CorManha, TempoTransicao)

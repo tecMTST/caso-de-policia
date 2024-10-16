@@ -1,0 +1,19 @@
+﻿Id;Conselheiro;Texto;Custo;Criminalidade;Popularidade
+1;Lurdes;Remover câmera dos uniformes policiais;10;10;-20
+2;Douces;Investigar 3 lojas de revenda de celulares;5;-5;10
+3;Douces;Treinamento mais moderno para os agentes;5;-10;10
+4;Lurdes;Armamento mais pesado para os policiais;35;0;5
+5;Lurdes;Abordagem mais violentas em zonas de conflito;20;-5;-30
+6;Douces;Ampliação de patrulhas contra a violência doméstica ;5;-20;20
+7;Douces;Policiamento de proximidade em zonas mais conflitivas;5;-20;20
+8;Douces;Contratação de psicólogos para policiais com traumas;10;-5;5
+9;Lurdes;Tirar patrulhas para violência doméstica e colocá-las na cracolândia;10;-10;-25
+10;Lurdes;Criação de uma força especial para acabar com a cracolândia;20;-5;20
+11;Douces;Ampliação de médicos, psicólogos e assistentes sociais na área da cracolândia;5;-10;20
+12;Douces;Fazer ronda policial perto dos pontos de ônibus da cidade;5;-10;15
+13;Douces;GCM na porta das escolas em horários de entrada e saída;5;-10;20
+14;Lurdes;Tomar as barracas das pessoas dormindo nas ruas;10;20;-10
+15;Lurdes;Mandar a GCM proibir a distribuição de marmitas na cracolândia;5;20;-20
+16;Douces;Limpar o centro histórico de São Paulo;10;-20;25
+17;Lurdes;Iluminação do centro histórico com lâmpadas de LED nas cores verde e amarelo;30;0;0
+18;Lurdes;Falar com meu cunhado do PCC pra maneirar no centro;40;-15;-50

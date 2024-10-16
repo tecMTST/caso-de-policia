@@ -15,97 +15,83 @@ Parser.Default.ParseArguments<Options>(args)
 static void RunOptions(Options opts)
 {
     var gameData = new GameData();
-    var newsFile = "news.csv";
-    var suggestionFile = "suggestions.csv";
+    var configFile = "config.csv";
+    var newsFile = "noticias.csv";
+    var suggestionFile = "sugstoes.csv";
 
     if (opts.Interactive)
     {
-        Console.WriteLine("Selecione o arquivo de Noticias (news.csv):");
+        Console.WriteLine("Selecione o arquivo de Noticias (noticias.csv):");
         newsFile = Console.ReadLine();
         if (string.IsNullOrEmpty(newsFile))
         {
             newsFile = "news.csv";
         }
-        Console.WriteLine("Selecione o arquivo de sugestões (suggestions.csv):");
+        Console.WriteLine("Selecione o arquivo de sugestões (sugstoes.csv):");
         suggestionFile = Console.ReadLine();
         if (string.IsNullOrEmpty(suggestionFile))
         {
             suggestionFile = "suggestions.csv";
         }
-
-        Console.WriteLine("Nivel de segurança inicial (50):");
-        var initialSecurity = Console.ReadLine();
-        if (string.IsNullOrEmpty(initialSecurity) || !float.TryParse(initialSecurity, out var _))
+        Console.WriteLine("Selecione o arquivo de configurações (config.csv):");
+        configFile = Console.ReadLine();
+        if (string.IsNullOrEmpty(configFile))
         {
-            initialSecurity = "50";
+            configFile = "config.csv";
         }
-        gameData.InitialStatus.Criminality = float.Parse(initialSecurity);
-
-        Console.WriteLine("Nivel de popularidade inicial (50):");
-        var initialPopularity = Console.ReadLine();
-        if (string.IsNullOrEmpty(initialPopularity) || !float.TryParse(initialPopularity, out var _))
-        {
-            initialPopularity = "50";
-        }
-        gameData.InitialStatus.Popularity = float.Parse(initialPopularity);
-
-        Console.WriteLine("Dinheiro inicial (20):");
-        var initialCash = Console.ReadLine();
-        if (string.IsNullOrEmpty(initialCash) || !float.TryParse(initialCash, out var _))
-        {
-            initialCash = "20";
-        }
-        gameData.InitialStatus.Cash = float.Parse(initialCash);
-
-        Console.WriteLine("Tempo de duração da transicao em segundos (2):");
-        var transitionTime = Console.ReadLine();
-        if (string.IsNullOrEmpty(transitionTime) || !float.TryParse(transitionTime, out var _))
-        {
-            transitionTime = "2";
-        }
-        gameData.InitialStatus.TransitionTime = float.Parse(transitionTime);
-
-        Console.WriteLine("Limite de dias (7):");
-        var daysLimit = Console.ReadLine();
-        if (string.IsNullOrEmpty(daysLimit) || !float.TryParse(daysLimit, out var _))
-        {
-            daysLimit = "7";
-        }
-        gameData.InitialStatus.DaysLimit = float.Parse(daysLimit);
     }
     else
     {
         newsFile = opts.News;
         suggestionFile = opts.Suggestions;
-        gameData.InitialStatus.TransitionTime = opts.TransitionTime;
-        gameData.InitialStatus.Cash = opts.InitialCash;
-        gameData.InitialStatus.Popularity = opts.InitialPopularity;
-        gameData.InitialStatus.Criminality = opts.InitialCriminality;
-        gameData.InitialStatus.DaysLimit = opts.DaysLimit;
+        configFile = opts.Config;        
     }
 
     foreach (var line in CsvReader.ReadFromText(File.ReadAllText(newsFile)))
     {
 
-        gameData.News.Add(new News
+        gameData.Noticias.Add(new News
         {
-            Text = line["Text"],
-            SuggestionId = line["SuggestionId"]
+            Texto = line["Texto"],
+            SugestaoId = line["SugestaoId"]
         });
     }
 
     foreach (var line in CsvReader.ReadFromText(File.ReadAllText(suggestionFile)))
     {
 
-        gameData.Suggetions.Add(new Suggestion
+        gameData.Sugestoes.Add(new Suggestion
         {
             Id = line["Id"],
-            Text = line["Text"],
-            Candidate = line["Candidate"],
-            Cost = float.TryParse(line["Cost"], out var cost) ? cost : 0,
-            Criminality = float.TryParse(line["Criminality"], out var security) ? security : 0,
-            Popularity = float.TryParse(line["Popularity"], out var popularity) ? popularity : 0,
+            Texto = line["Texto"],
+            Conselheiro = line["Conselheiro"],
+            Custo = float.TryParse(line["Custo"], out var cost) ? cost : 0,
+            Criminalidade = float.TryParse(line["Criminalidade"], out var security) ? security : 0,
+            Popularidade = float.TryParse(line["Popularidade"], out var popularity) ? popularity : 0,
         });
+    }
+
+    var configLine = CsvReader.ReadFromText(File.ReadAllText(configFile)).FirstOrDefault();
+    if (configLine != null)
+    {
+        gameData.Configuracoes = new Configuracoes
+        {
+            Criminalidade = float.TryParse(configLine["CriminalidadeInicial"], out var crime) ? crime : 0,
+            Popularidade = float.TryParse(configLine["PopularidadeInicial"], out var popu) ? popu : 0,
+            Dinheiro = float.TryParse(configLine["DinheiroInicial"], out var cash) ? cash : 0,
+            LimiteDias = int.TryParse(configLine["LimiteDias"], out var days) ? days : 0,
+            TempoTransicao = float.TryParse(configLine["TempoTransicao"], out var time) ? time : 0,
+            CriminalidadeVitoriaAlta = float.TryParse(configLine["CriminalidadeVitoriaAlta"], out var crimeAlta) ? crimeAlta : 0,
+            CriminalidadeVitoriaModerada = float.TryParse(configLine["TempoTransicao"], out var crimeModerada) ? crimeModerada : 0,
+            PopularidadeVitoriaAlta = float.TryParse(configLine["CriminalidadeVitoriaModerada"], out var popAlta) ? popAlta : 0,
+            PopularidadeVitoriaModerada = float.TryParse(configLine["PopularidadeVitoriaModerada"], out var popModerada) ? popModerada : 0,
+            TextoVitoriaAlta = configLine["TextoVitoriaAlta"],
+            TextoVitoriaModerada = configLine["TextoVitoriaModerada"],
+            TextoDerrota = configLine["TextoDerrota"],
+            TextoDerrotaDinheiro = configLine["TextoDerrotaDinheiro"],
+            InclinacaoNeutro = float.TryParse(configLine["InclinacaoNeutro"], out var inclinacao) ? inclinacao : 0,
+            TextoNeutro = configLine["TextoNeutro"]
+        };
     }
 
     var gameDataJson = JsonSerializer.Serialize(gameData, new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping });

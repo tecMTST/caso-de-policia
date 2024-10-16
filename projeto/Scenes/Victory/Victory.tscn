@@ -1,25 +1,81 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwdkxqwrm75nx"]
+[gd_scene load_steps=7 format=3 uid="uid://dwdkxqwrm75nx"]
 
 [ext_resource type="Script" path="res://Scenes/Victory/Victory.gd" id="1_tl113"]
+[ext_resource type="PackedScene" uid="uid://cu1qimgoij27y" path="res://Scenes/Componentes/Background.tscn" id="2_8qlsy"]
+[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="3_ohmbk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lowf4"]
+font = ExtResource("3_ohmbk")
+font_size = 82
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8kap"]
+font = ExtResource("3_ohmbk")
+font_size = 60
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ajih"]
+size = Vector2(450, 150)
 
 [node name="Victory" type="Node2D"]
 script = ExtResource("1_tl113")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 186.0
-offset_top = 774.0
-offset_right = 894.0
-offset_bottom = 885.0
-theme_override_font_sizes/normal_font_size = 60
-bbcode_enabled = true
-text = "[center]Parabains![/center]"
+[node name="Base" type="CanvasLayer" parent="."]
 
-[node name="VoltarMenuCTA" type="Button" parent="."]
-offset_left = 275.0
-offset_top = 915.0
-offset_right = 799.0
-offset_bottom = 1046.0
-theme_override_font_sizes/font_size = 60
-text = "Voltar ao menu"
+[node name="Background" parent="Base" instance=ExtResource("2_8qlsy")]
 
-[connection signal="pressed" from="VoltarMenuCTA" to="." method="_on_voltar_menu_cta_pressed"]
+[node name="Texto" type="Label" parent="Base"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -597.5
+offset_bottom = -442.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Parabéns!
+Você Foi eleito prefeito de São Paulo."
+label_settings = SubResource("LabelSettings_lowf4")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Botoes" type="Control" parent="Base"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.55, 1)
+pivot_offset = Vector2(20, 0)
+
+[node name="TextoIniciar" type="Label" parent="Base/Botoes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -52.5
+offset_right = 98.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(98.1576, 0.103577)
+text = "Pressione/Clique
+Para Voltar para o menu"
+label_settings = SubResource("LabelSettings_x8kap")
+horizontal_alignment = 1
+
+[node name="Iniciar" type="TouchScreenButton" parent="Base/Botoes"]
+position = Vector2(18.6759, 40.4663)
+shape = SubResource("RectangleShape2D_7ajih")
+
+[connection signal="pressed" from="Base/Botoes/Iniciar" to="." method="_on_iniciar_pressed"]

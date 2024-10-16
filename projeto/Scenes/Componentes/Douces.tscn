@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnvrhukyxun15"]
+[gd_scene load_steps=21 format=3 uid="uid://cnvrhukyxun15"]
 
 [ext_resource type="Texture2D" uid="uid://gicrwp65p0dd" path="res://Assets/Imagens/douces_neutro.png" id="1_iexl0"]
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_j6djn"]
@@ -9,6 +9,10 @@
 [ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_dp6b4"]
 [ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="7_yjxv3"]
 [ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_p46fe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
+font = ExtResource("6_dp6b4")
+font_size = 53
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xo644"]
 animations = [{
@@ -27,28 +31,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
-font = ExtResource("6_dp6b4")
-font_size = 53
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpsc"]
 size = Vector2(1000, 500)
-
-[sub_resource type="Animation" id="Animation_c6yii"]
-resource_name = "entrar"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-375, 0), Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_cifp3"]
 length = 0.001
@@ -63,6 +47,66 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-300, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_c6yii"]
+resource_name = "entrar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-375, 0), Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 3, 2, 3, 3, 0),
+"points": PackedFloat32Array(-375, -0.25, 0, 0.0786098, 356.5, -100.5, -0.0300701, -131.974, 0.0722278, 317, -1.5, -0.0148246, 142, 0.0148246, -142, -2.5, -0.0106479, -50.3834, 0.00908747, 43, -2.5, -0.0245379, 59, 0.0245379, -59, 0.5, -0.0600472, 0.5, 0.0600472, -0.5, 0, -0.0755219, -1, 0.25, 0),
+"times": PackedFloat32Array(0, 0.0612601, 0.164082, 0.213761, 0.278412, 0.409176, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
 }
 
 [sub_resource type="Animation" id="Animation_n4fi1"]
@@ -81,11 +125,77 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-375, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_eh531"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.5, 25, 0.5, -25, 0, -0.5, -25, 0.5, 25, 0, -0.5, 25, 0.5, -25),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ps08h"]
 _data = {
 "RESET": SubResource("Animation_cifp3"),
 "entrar": SubResource("Animation_c6yii"),
+"idle": SubResource("Animation_eh531"),
 "sair": SubResource("Animation_n4fi1")
+}
+
+[sub_resource type="Animation" id="Animation_b57pl"]
+resource_name = "rotacao"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_xii2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pd3ft"]
+_data = {
+"RESET": SubResource("Animation_xii2u"),
+"rotacao": SubResource("Animation_b57pl")
 }
 
 [node name="Douces" type="Control"]
@@ -96,38 +206,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j6djn")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-375, 0)
-sprite_frames = SubResource("SpriteFrames_xo644")
-speed_scale = 0.0
-
-[node name="Nome" type="TextureRect" parent="Sprite"]
-offset_left = -219.0
-offset_top = -233.0
-offset_right = 159.0
-offset_bottom = 12.0
-texture = ExtResource("5_4jo5y")
-expand_mode = 2
-stretch_mode = 4
+ImagemBalao = "res://Assets/Imagens/douces_proposta.svg"
+ImagemBalaoPressed = "res://Assets/Imagens/douces_proposta_pressed.svg"
 
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 83.0
-offset_top = -268.0
-offset_right = 738.208
-offset_bottom = 197.0
+offset_left = 161.0
+offset_top = -274.0
+offset_right = 816.208
+offset_bottom = 191.0
+scale = Vector2(1.13686, 1.13686)
 texture = ExtResource("4_4qcex")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 27.0
-offset_right = 640.0
-offset_bottom = 333.0
+offset_left = 102.035
+offset_top = 73.008
+offset_right = 635.035
+offset_bottom = 379.008
+scale = Vector2(0.868225, 0.868225)
 label_settings = SubResource("LabelSettings_hnq51")
 autowrap_mode = 3
 script = ExtResource("7_yjxv3")
@@ -135,11 +234,10 @@ Interval = 0.02
 Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
-layout_mode = 0
-offset_left = 305.0
-offset_top = 307.0
-offset_right = 596.0
-offset_bottom = 362.0
+offset_left = 244.533
+offset_top = 321.059
+offset_right = 535.533
+offset_bottom = 376.059
 alignment = 2
 
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
@@ -177,14 +275,38 @@ texture = ExtResource("8_p46fe")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-375, 0)
+sprite_frames = SubResource("SpriteFrames_xo644")
+speed_scale = 0.0
+flip_h = true
+
+[node name="PivotNome" type="Node2D" parent="Sprite"]
+
+[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -219.0
+offset_top = -233.0
+offset_right = 159.0
+offset_bottom = 12.0
+texture = ExtResource("5_4jo5y")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="Botao" type="TouchScreenButton" parent="."]
-position = Vector2(254, -41)
+position = Vector2(308, 14)
+scale = Vector2(1.04, 1)
 shape = SubResource("RectangleShape2D_ltpsc")
-shape_visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 root_node = NodePath("../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_ps08h")
+}
+speed_scale = 0.75
+
+[node name="AnimationNome" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pd3ft")
 }

@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc8qq8nuav8ol"]
+[gd_scene load_steps=8 format=3 uid="uid://cc8qq8nuav8ol"]
 
 [ext_resource type="Script" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.gd" id="1_0jyjq"]
+[ext_resource type="Texture2D" uid="uid://dq8r0v5ofqi03" path="res://Assets/Imagens/manchete_balao.svg" id="2_iftn7"]
+[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="3_ch5ns"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fm7tr"]
+font = ExtResource("3_ch5ns")
+font_size = 95
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3otv"]
+size = Vector2(300, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eyo3y"]
+font = ExtResource("3_ch5ns")
+font_size = 60
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3hur"]
+size = Vector2(300, 100)
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -11,46 +29,110 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0jyjq")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Fundo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = -329.0
-offset_right = 308.0
-offset_bottom = 329.0
+offset_left = -372.0
+offset_top = -345.0
+offset_right = -323.0
+offset_bottom = -285.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(15.024, 15.024)
+texture = ExtResource("2_iftn7")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
-custom_minimum_size = Vector2(350, 130)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]Pausa![/center]"
+[node name="Titulo" type="Label" parent="Fundo"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -55.0
+offset_right = 55.0
+offset_bottom = 121.0
+grow_horizontal = 2
+scale = Vector2(0.0793412, 0.0793412)
+pivot_offset = Vector2(80, 0)
+text = "Pausa!"
+label_settings = SubResource("LabelSettings_fm7tr")
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Botoes" type="Control" parent="Fundo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 13.3786
+offset_bottom = 13.3786
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.821382, 0.408833)
+pivot_offset = Vector2(24.4942, 3.8147e-06)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fundo/Botoes"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.21393, 1)
 theme_override_constants/separation = 30
+alignment = 1
 
-[node name="ResumeCTA" type="Button" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 80)
+[node name="ControlVoltar" type="Control" parent="Fundo/Botoes/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Voltar ao jogo"
 
-[node name="MainMenuCTA" type="Button" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 80)
+[node name="VoltarAojogo" type="TouchScreenButton" parent="Fundo/Botoes/VBoxContainer/ControlVoltar"]
+position = Vector2(20.9118, -1.02062)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_y3otv")
+
+[node name="LabelVoltar" type="Label" parent="Fundo/Botoes/VBoxContainer/ControlVoltar/VoltarAojogo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -122.159
+offset_top = -42.3294
+offset_right = 128.841
+offset_bottom = 33.6706
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Voltar ao Jogo"
+label_settings = SubResource("LabelSettings_eyo3y")
+horizontal_alignment = 1
+
+[node name="ControlMenu" type="Control" parent="Fundo/Botoes/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Desistir"
+size_flags_vertical = 3
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ResumeCTA" to="." method="_on_resume_cta_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuCTA" to="." method="_on_main_menu_cta_pressed"]
+[node name="VoltarAoMenu" type="TouchScreenButton" parent="Fundo/Botoes/VBoxContainer/ControlMenu"]
+position = Vector2(20.8451, -15.3694)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_w3hur")
+
+[node name="LabelMenu" type="Label" parent="Fundo/Botoes/VBoxContainer/ControlMenu/VoltarAoMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.323
+offset_top = -41.3584
+offset_right = 121.677
+offset_bottom = 34.6416
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Voltar ao mENU"
+label_settings = SubResource("LabelSettings_eyo3y")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Fundo/Botoes/VBoxContainer/ControlVoltar/VoltarAojogo" to="." method="_on_voltar_aojogo_pressed"]
+[connection signal="pressed" from="Fundo/Botoes/VBoxContainer/ControlMenu/VoltarAoMenu" to="." method="_on_voltar_ao_menu_pressed"]

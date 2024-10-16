@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgms6s5c6847n"]
+[gd_scene load_steps=25 format=3 uid="uid://dgms6s5c6847n"]
 
 [ext_resource type="Script" path="res://Scenes/GameLoop/GameLoop.gd" id="1_7bs80"]
 [ext_resource type="PackedScene" uid="uid://cc8qq8nuav8ol" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.tscn" id="2_aaawu"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="15_w6y5t"]
 [ext_resource type="Theme" uid="uid://b6btopaperbt1" path="res://Assets/Temas/BarraPadrao.tres" id="16_65uti"]
 [ext_resource type="Texture2D" uid="uid://kogr60h4n7gs" path="res://Assets/Imagens/aprovacao.svg" id="16_lhstf"]
+[ext_resource type="FontFile" uid="uid://du2bh6umv0euo" path="res://Assets/Fontes/AmaticSC-Regular.ttf" id="18_52ayc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ib3x"]
 font = ExtResource("9_pfwtl")
@@ -34,6 +35,16 @@ font = ExtResource("12_8jx8w")
 font_size = 50
 font_color = Color(0.356863, 0.298039, 0.317647, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_nbvlc"]
+font = ExtResource("12_8jx8w")
+font_size = 60
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvgm6"]
+font = ExtResource("18_52ayc")
+font_size = 60
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7bs80")
 
@@ -48,9 +59,9 @@ offset_right = -178.0
 offset_bottom = -970.0
 
 [node name="Lourdes" parent="Base" instance=ExtResource("4_nhjlw")]
-offset_left = 896.0
+offset_left = 838.0
 offset_top = 1222.0
-offset_right = 896.0
+offset_right = 838.0
 offset_bottom = 1222.0
 
 [node name="PauseArea" type="Control" parent="Base"]
@@ -91,44 +102,46 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -61.0
-offset_top = -254.0
-offset_right = 200.0
-offset_bottom = 183.0
+offset_left = -158.0
+offset_top = -308.0
+offset_right = 103.0
+offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.08355, 1.08355)
 texture = ExtResource("7_yd4eu")
 expand_mode = 4
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="TituloNoticia" type="TextureRect" parent="Base/Noticias/TextureNoticia"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = 21.0
-offset_right = -133.0
-offset_bottom = -903.0
+offset_left = 69.2171
+offset_top = 229.801
+offset_right = 69.217
+offset_bottom = 229.801
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.849001, 0.849001)
 texture = ExtResource("8_mvne2")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="TextoNoticia" type="Label" parent="Base/Noticias/TextureNoticia"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -450.5
-offset_top = -305.5
-offset_right = 337.5
-offset_bottom = 244.5
+offset_left = 83.0605
+offset_top = -119.667
+offset_right = 83.0604
+offset_bottom = 161.333
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.831326, 1.0512)
 label_settings = SubResource("LabelSettings_6ib3x")
 autowrap_mode = 2
 
@@ -139,10 +152,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -251.0
-offset_top = -423.0
-offset_right = -136.0
-offset_bottom = -311.0
+offset_left = -179.014
+offset_top = -420.231
+offset_right = -64.0143
+offset_bottom = -308.231
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -153,14 +166,15 @@ texture_normal = ExtResource("10_og0lg")
 texture_pressed = ExtResource("11_7qrjf")
 
 [node name="Topo" type="Control" parent="Base"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -292.0
-offset_top = 24.0
+offset_top = 711.0
 offset_right = 292.0
-offset_bottom = 188.0
+offset_bottom = 875.0
 grow_horizontal = 2
 
 [node name="BoxTopo" type="VBoxContainer" parent="Base/Topo"]
@@ -264,6 +278,73 @@ step = 1.0
 value = 50.0
 show_percentage = false
 
+[node name="Abertura" type="Control" parent="Base"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextoAberturaTopo" type="Label" parent="Base/Abertura"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -705.0
+offset_bottom = -615.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Parabéns!
+Você Foi eleito prefeito de São Paulo."
+label_settings = SubResource("LabelSettings_nbvlc")
+horizontal_alignment = 1
+
+[node name="TextoAberturaCentro" type="Label" parent="Base/Abertura"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -485.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Infelizmente, em 2024, a cidade se
+encontra tomada pelo crime organizado.
+Roubos, latrocínios, feminicídios e furtos
+de celulares estão em alta
+
+para tentar resolver este problema em
+apenas uma semana, você chamou seus dois
+conselheiros mais influentes: Gustavo
+Douces e Reinaldo Lurdes."
+label_settings = SubResource("LabelSettings_bvgm6")
+horizontal_alignment = 1
+
+[node name="TextoAberturaBase" type="Label" parent="Base/Abertura"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 326.0
+offset_right = 2.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quem você vai escutar?"
+label_settings = SubResource("LabelSettings_nbvlc")
+horizontal_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Base/Abertura"]
+position = Vector2(911, 1350)
+scale = Vector2(0.592145, 0.592145)
+texture_normal = ExtResource("10_og0lg")
+texture_pressed = ExtResource("11_7qrjf")
+
 [node name="PauseMenuOverlay" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseMenuOverlay" instance=ExtResource("2_aaawu")]
@@ -275,4 +356,5 @@ visible = false
 [connection signal="Selecionar" from="Base/Lourdes" to="." method="_on_lourdes_selecionar"]
 [connection signal="pressed" from="Base/PauseArea/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Base/Noticias/TextureNoticia/Control/FecharNoticia" to="." method="_on_fechar_noticia_pressed"]
+[connection signal="pressed" from="Base/Abertura/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="resumed" from="PauseMenuOverlay/PauseMenu" to="." method="_on_pause_menu_resumed"]

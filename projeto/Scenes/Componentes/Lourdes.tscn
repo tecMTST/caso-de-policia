@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2en35wgf36dm"]
+[gd_scene load_steps=21 format=3 uid="uid://b2en35wgf36dm"]
 
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_qko8e"]
 [ext_resource type="Texture2D" uid="uid://de3laniybw073" path="res://Assets/Imagens/lurdes_neutro.png" id="2_xq3kg"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://np8f8kwwyscp" path="res://Assets/Imagens/lurdes_nome.svg" id="6_su48b"]
 [ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="8_0c5g2"]
 [ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_oru4f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
+font = ExtResource("6_kg6qv")
+font_size = 53
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jxtn"]
 animations = [{
@@ -27,10 +31,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
-font = ExtResource("6_kg6qv")
-font_size = 53
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpsc"]
 size = Vector2(900, 500)
 
@@ -48,13 +48,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(300, 0)]
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_v6x68"]
 resource_name = "entrar"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -63,6 +85,28 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(375, 0), Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 3, 0),
+"points": PackedFloat32Array(375, 0, 0, 0.0305311, -71.5, -1.5, -0.02498, 188, 0.02498, -188, -3.5, -0.0263678, -92, 0.0263678, 92, 1.5, -0.0166534, 21, 0.0166534, -21, -0.5, -0.0166533, -13, 0.0166533, 13, 0, -0.138778, -3.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.105471, 0.192901, 0.263678, 0.330291, 0.4996)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
 }
 
 [sub_resource type="Animation" id="Animation_gkias"]
@@ -81,11 +125,77 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(375, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wfe8c"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.5, 25, 0.5, -25, 0, -0.5, -25, 0.5, 25, 0, -0.5, 25, 0.5, -25),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcpse"]
 _data = {
 "RESET": SubResource("Animation_abt0u"),
 "entrar": SubResource("Animation_v6x68"),
+"idle": SubResource("Animation_wfe8c"),
 "sair": SubResource("Animation_gkias")
+}
+
+[sub_resource type="Animation" id="Animation_7juhn"]
+resource_name = "rotacao"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_lg1aq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81toi"]
+_data = {
+"RESET": SubResource("Animation_lg1aq"),
+"rotacao": SubResource("Animation_7juhn")
 }
 
 [node name="Lourdes" type="Control"]
@@ -96,38 +206,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qko8e")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(375, 0)
-sprite_frames = SubResource("SpriteFrames_8jxtn")
-speed_scale = 0.0
-
-[node name="Nome" type="TextureRect" parent="Sprite"]
-offset_left = -64.0
-offset_top = -233.0
-offset_right = 314.0
-offset_bottom = 12.0
-texture = ExtResource("6_su48b")
-expand_mode = 2
-stretch_mode = 4
+ImagemBalao = "res://Assets/Imagens/lurdes_proposta.svg"
+ImagemBalaoPressed = "res://Assets/Imagens/lurdes_proposta_pressed.svg"
 
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -740.0
-offset_top = -268.0
-offset_right = -84.792
-offset_bottom = 197.0
+offset_left = -798.0
+offset_top = -254.0
+offset_right = -142.792
+offset_bottom = 211.0
+scale = Vector2(1.12445, 1.12445)
+pivot_offset = Vector2(328, 212)
 texture = ExtResource("5_1f2ds")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 27.0
-offset_right = 548.0
-offset_bottom = 333.0
+offset_left = 41.6371
+offset_top = 78.6011
+offset_right = 574.637
+offset_bottom = 384.601
+scale = Vector2(0.85915, 0.85915)
 label_settings = SubResource("LabelSettings_hnq51")
 autowrap_mode = 3
 script = ExtResource("8_0c5g2")
@@ -135,10 +236,11 @@ Interval = 0.02
 Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
-offset_left = 49.0
-offset_top = 302.0
-offset_right = 340.0
-offset_bottom = 357.0
+layout_mode = 0
+offset_left = 64.7595
+offset_top = 323.166
+offset_right = 355.76
+offset_bottom = 378.166
 
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
 visible = false
@@ -175,14 +277,38 @@ texture = ExtResource("8_oru4f")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(375, 0)
+sprite_frames = SubResource("SpriteFrames_8jxtn")
+speed_scale = 0.0
+
+[node name="PivotNome" type="Node2D" parent="Sprite"]
+
+[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -79.8049
+offset_top = -231.385
+offset_right = 298.195
+offset_bottom = 13.6147
+scale = Vector2(1.33087, 1.33087)
+texture = ExtResource("6_su48b")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="Botao" type="TouchScreenButton" parent="."]
-position = Vector2(-293, -42)
+position = Vector2(-291, 18)
+scale = Vector2(1.2, 1)
 shape = SubResource("RectangleShape2D_ltpsc")
-shape_visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 root_node = NodePath("../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_lcpse")
+}
+speed_scale = 0.75
+
+[node name="AnimationNome" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_81toi")
 }

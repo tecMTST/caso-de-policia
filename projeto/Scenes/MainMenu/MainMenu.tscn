@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn38wa5axb4jj"]
+[gd_scene load_steps=10 format=3 uid="uid://cn38wa5axb4jj"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="1_o4ahw"]
+[ext_resource type="PackedScene" uid="uid://cu1qimgoij27y" path="res://Scenes/Componentes/Background.tscn" id="2_jgn08"]
+[ext_resource type="Texture2D" uid="uid://cx0jnmp8jtpj1" path="res://Assets/Imagens/titulo.svg" id="3_yl8cl"]
+[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="4_74cex"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bx11i"]
+font = ExtResource("4_74cex")
+font_size = 60
+font_color = Color(0.360784, 0.294118, 0.317647, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11rh3"]
+size = Vector2(300, 150)
+
+[sub_resource type="Animation" id="Animation_8104k"]
+resource_name = "botao"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Botoes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.411765), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nqrsl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Botoes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ad48q"]
+_data = {
+"RESET": SubResource("Animation_nqrsl"),
+"botao": SubResource("Animation_8104k")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,32 +60,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o4ahw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Background" parent="." instance=ExtResource("2_jgn08")]
+layout_mode = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -552.5
+offset_top = -414.5
+offset_right = 552.5
+offset_bottom = 690.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 45
+scale = Vector2(0.342511, 0.342511)
+pivot_offset = Vector2(549.393, -0.373108)
+texture = ExtResource("3_yl8cl")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="IniciarJogoCTA" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(310, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Iniciar jogo"
+[node name="Botoes" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0001
+offset_top = 88.0
+offset_right = 19.9999
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.55, 1)
+pivot_offset = Vector2(20, 0)
 
-[node name="SobreCTA" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(310, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Sobre"
+[node name="TextoIniciar" type="Label" parent="Botoes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -52.5
+offset_right = 98.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(98.1576, 0.103577)
+text = "Pressione/Clique
+Para Iniciar"
+label_settings = SubResource("LabelSettings_bx11i")
+horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/IniciarJogoCTA" to="." method="_on_iniciar_jogo_cta_pressed"]
-[connection signal="pressed" from="VBoxContainer/SobreCTA" to="." method="_on_sobre_cta_pressed"]
+[node name="Iniciar" type="TouchScreenButton" parent="Botoes"]
+position = Vector2(18.6759, 18.4663)
+shape = SubResource("RectangleShape2D_11rh3")
+
+[node name="AnimationBotao" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ad48q")
+}
+
+[connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]

@@ -3,8 +3,8 @@
     internal class News
     {
 
-        public string Text { get; set; } = string.Empty;
+        public string Texto { get; set; } = string.Empty;
 
-        public string SuggestionId { get; set; } = string.Empty;
+        public string SugestaoId { get; set; } = string.Empty;
     }
 }

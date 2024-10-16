@@ -2,11 +2,11 @@
 {
     internal class GameData
     {
-        public List<Suggestion> Suggetions { get; set; } = [];
+        public List<Suggestion> Sugestoes { get; set; } = [];
 
-        public List<News> News { get; set; } = [];
+        public List<News> Noticias { get; set; } = [];
 
-        public InitialStatus InitialStatus { get; set; } = new();
+        public Configuracoes Configuracoes { get; set; } = new();
 
 
     }

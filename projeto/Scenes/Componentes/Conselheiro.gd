@@ -26,6 +26,8 @@ signal Selecionar
 @onready var animation_nome: AnimationPlayer = $AnimationNome
 
 var Ativo = false
+@onready var spriteOriginaSize = sprite.scale
+@onready var balaoOriginaSize = balao.scale
 
 func _ready() -> void:
 	balao.texture = load(ImagemBalao)
@@ -59,23 +61,26 @@ func __limpar():
 func EsconderTexto():
 	create_tween().tween_property(balao,"modulate:a", 0, 0.5)
 	create_tween().tween_property(nome,"modulate:a", 0, 0.5)
-	__limpar()
 	await get_tree().create_timer(0.5).timeout
+	__limpar()
 	balao.texture = load(ImagemBalao)
-	animation_player.play("sair")
+	animation_player.play("sair")	
 
 func DefinirExpressao(expressao: Expressoes):
 	match expressao:
 		Expressoes.Neutro:
 			sprite.frame = 0
-			create_tween().tween_property(sprite,"scale", Vector2(1, 1), 0.3)
+			create_tween().tween_property(sprite, "scale", spriteOriginaSize, 1)
+			create_tween().tween_property(balao, "scale", balaoOriginaSize, 1)
 		Expressoes.Sim:
 			sprite.frame = 1
-			create_tween().tween_property(sprite,"scale", Vector2(1.5, 1.5), 0.3)
 			balao.texture = load(ImagemBalaoPressed)
+			create_tween().tween_property(sprite,"scale", Vector2(1.2, 1.2), 2)
+			create_tween().tween_property(balao, "scale", Vector2(1.2, 1.2), 2)
 		Expressoes.Nao:
 			sprite.frame = 2
-			create_tween().tween_property(sprite,"scale", Vector2(1, 1), 0.3)
+			create_tween().tween_property(sprite, "scale", Vector2(0.8, 0.8), 2)
+			create_tween().tween_property(balao, "scale", Vector2(0.8, 0.8), 2)
 
 func _on_botao_pressed() -> void:	
 	if Ativo:

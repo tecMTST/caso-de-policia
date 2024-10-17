@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dgms6s5c6847n"]
+[gd_scene load_steps=27 format=3 uid="uid://dgms6s5c6847n"]
 
 [ext_resource type="Script" path="res://Scenes/GameLoop/GameLoop.gd" id="1_7bs80"]
 [ext_resource type="PackedScene" uid="uid://cc8qq8nuav8ol" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.tscn" id="2_aaawu"]
@@ -12,38 +12,36 @@
 [ext_resource type="FontFile" uid="uid://dvp2jquyd01n7" path="res://Assets/Fontes/MochiyPopOne-Regular.ttf" id="9_pfwtl"]
 [ext_resource type="Texture2D" uid="uid://dninxisgald5t" path="res://Assets/Imagens/seta.svg" id="10_og0lg"]
 [ext_resource type="Texture2D" uid="uid://dtmge7ay1nkjn" path="res://Assets/Imagens/seta_pressed.svg" id="11_7qrjf"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="12_8jx8w"]
 [ext_resource type="Texture2D" uid="uid://lsjjqiw3tugh" path="res://Assets/Imagens/criminalidade.svg" id="13_wua68"]
 [ext_resource type="Theme" uid="uid://cyypp2612hcef" path="res://Assets/Temas/BarraCrime.tres" id="14_e6d6e"]
 [ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="15_w6y5t"]
 [ext_resource type="Theme" uid="uid://b6btopaperbt1" path="res://Assets/Temas/BarraPadrao.tres" id="16_65uti"]
 [ext_resource type="Texture2D" uid="uid://kogr60h4n7gs" path="res://Assets/Imagens/aprovacao.svg" id="16_lhstf"]
-[ext_resource type="FontFile" uid="uid://du2bh6umv0euo" path="res://Assets/Fontes/AmaticSC-Regular.ttf" id="18_52ayc"]
+[ext_resource type="FontFile" uid="uid://dlrp4rktxbpfg" path="res://Assets/Fontes/ShantellSans-Bold.ttf" id="18_kn7xy"]
+[ext_resource type="FontFile" uid="uid://dt6meu5mnlbqg" path="res://Assets/Fontes/ShantellSans-Medium.ttf" id="19_5gf8s"]
+[ext_resource type="Texture2D" uid="uid://daxiwpe8vjod4" path="res://Assets/Imagens/seta_escura.svg" id="20_qtfa2"]
+[ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="20_x56ol"]
+[ext_resource type="Texture2D" uid="uid://cn3vg06hj4q8l" path="res://Assets/Imagens/seta_escura_pressed.svg" id="21_3nw1v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ib3x"]
-font = ExtResource("9_pfwtl")
-font_size = 46
+font = ExtResource("19_5gf8s")
+font_size = 40
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c1n3d"]
-font = ExtResource("12_8jx8w")
+font = ExtResource("9_pfwtl")
 font_size = 120
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qf628"]
-font = ExtResource("12_8jx8w")
-font_size = 50
+font = ExtResource("20_x56ol")
+font_size = 84
 font_color = Color(0.356863, 0.298039, 0.317647, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_nbvlc"]
-font = ExtResource("12_8jx8w")
-font_size = 60
-font_color = Color(0.360784, 0.294118, 0.317647, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_bvgm6"]
-font = ExtResource("18_52ayc")
-font_size = 60
-font_color = Color(0.360784, 0.294118, 0.317647, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_odxp8"]
+font = ExtResource("19_5gf8s")
+font_size = 73
+font_color = Color(0.356863, 0.298039, 0.317647, 1)
 
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7bs80")
@@ -53,9 +51,9 @@ script = ExtResource("1_7bs80")
 [node name="Background" parent="Base" instance=ExtResource("2_qwyw7")]
 
 [node name="Douces" parent="Base" instance=ExtResource("3_n4kqb")]
-offset_left = 238.0
+offset_left = 243.0
 offset_top = 622.0
-offset_right = -178.0
+offset_right = -173.0
 offset_bottom = -970.0
 
 [node name="Lourdes" parent="Base" instance=ExtResource("4_nhjlw")]
@@ -102,10 +100,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -158.0
-offset_top = -308.0
-offset_right = 103.0
-offset_bottom = 129.0
+offset_left = -78.0
+offset_top = -214.0
+offset_right = 36.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.08355, 1.08355)
@@ -118,10 +116,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 69.2171
-offset_top = 229.801
-offset_right = 69.217
-offset_bottom = 229.801
+offset_left = 113.0
+offset_top = 179.0
+offset_right = 10.0
+offset_bottom = -589.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.849001, 0.849001)
@@ -135,13 +133,14 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 83.0605
-offset_top = -119.667
-offset_right = 83.0604
-offset_bottom = 161.333
+offset_left = 123.0
+offset_top = -150.0
+offset_right = -11.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.831326, 1.0512)
+text = "“Agora nos sentimos muito mais seguros sabendo que todo dia terá uma viatura vigiando a entrada e saída de nossos filhos” comenta morador."
 label_settings = SubResource("LabelSettings_6ib3x")
 autowrap_mode = 2
 
@@ -152,16 +151,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -179.014
-offset_top = -420.231
-offset_right = -64.0143
-offset_bottom = -308.231
+offset_left = -177.458
+offset_top = -360.393
+offset_right = -102.458
+offset_bottom = -287.393
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="FecharNoticia" type="TouchScreenButton" parent="Base/Noticias/TextureNoticia/Control"]
-position = Vector2(-3, 11)
-scale = Vector2(0.534031, 0.534031)
+position = Vector2(0.076416, 14.1649)
+scale = Vector2(0.356861, 0.356861)
 texture_normal = ExtResource("10_og0lg")
 texture_pressed = ExtResource("11_7qrjf")
 
@@ -189,7 +188,7 @@ grow_vertical = 2
 
 [node name="TextoDia" type="Label" parent="Base/Topo/BoxTopo"]
 layout_mode = 2
-text = "Dia 1
+text = "Dia 01
 "
 label_settings = SubResource("LabelSettings_c1n3d")
 horizontal_alignment = 1
@@ -198,6 +197,13 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Manhã"
 label_settings = SubResource("LabelSettings_qf628")
+horizontal_alignment = 1
+
+[node name="TextoPergunta" type="Label" parent="Base/Topo/BoxTopo"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "Quais sao suas propostas?"
+label_settings = SubResource("LabelSettings_odxp8")
 horizontal_alignment = 1
 
 [node name="Rodape" type="Control" parent="Base"]
@@ -286,64 +292,84 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextoAberturaTopo" type="Label" parent="Base/Abertura"]
+[node name="TextoAberturaTopo" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -705.0
-offset_bottom = -615.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 177.0
+offset_right = -97.0
+offset_bottom = -1538.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Parabéns!
-Você Foi eleito prefeito de São Paulo."
-label_settings = SubResource("LabelSettings_nbvlc")
-horizontal_alignment = 1
+theme_override_colors/default_color = Color(0.360784, 0.294118, 0.317647, 1)
+theme_override_fonts/normal_font = ExtResource("19_5gf8s")
+theme_override_fonts/bold_font = ExtResource("18_kn7xy")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]Parabéns![/b]
+Você Foi eleito prefeito de São Paulo.[/center]"
+scroll_active = false
 
-[node name="TextoAberturaCentro" type="Label" parent="Base/Abertura"]
+[node name="TextoAbertura" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -485.0
-offset_bottom = 223.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = 445.0
+offset_right = -67.0
+offset_bottom = -674.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0.360784, 0.294118, 0.317647, 1)
+theme_override_fonts/normal_font = ExtResource("20_x56ol")
+theme_override_fonts/bold_font = ExtResource("18_kn7xy")
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
 text = "Infelizmente, em 2024, a cidade se
-encontra tomada pelo crime organizado.
-Roubos, latrocínios, feminicídios e furtos
-de celulares estão em alta
+encontra tomada pelo crime 
+organizado. Roubos, latrocínios, feminicídios e furtos de celulares estão em alta.
 
-para tentar resolver este problema em
-apenas uma semana, você chamou seus dois
-conselheiros mais influentes: Gustavo
-Douces e Reinaldo Lurdes."
-label_settings = SubResource("LabelSettings_bvgm6")
-horizontal_alignment = 1
+Para tentar resolver estes problemas em apenas uma semana, você chamou seus dois conselheiros mais influentes: [b]Gustavo Douces e Reinaldo Lurdes.[/b]"
 
-[node name="TextoAberturaBase" type="Label" parent="Base/Abertura"]
+[node name="TextoAberturaRodape" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = 326.0
-offset_right = 2.0
-offset_bottom = 481.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 1251.0
+offset_right = -97.0
+offset_bottom = -538.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quem você vai escutar?"
-label_settings = SubResource("LabelSettings_nbvlc")
-horizontal_alignment = 1
+theme_override_colors/default_color = Color(0.360784, 0.294118, 0.317647, 1)
+theme_override_fonts/normal_font = ExtResource("19_5gf8s")
+theme_override_fonts/bold_font = ExtResource("18_kn7xy")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]Quem você vai escutar?[/b][/center]"
+scroll_active = false
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Base/Abertura"]
 position = Vector2(911, 1350)
-scale = Vector2(0.592145, 0.592145)
-texture_normal = ExtResource("10_og0lg")
-texture_pressed = ExtResource("11_7qrjf")
+scale = Vector2(0.376964, 0.376964)
+texture_normal = ExtResource("20_qtfa2")
+texture_pressed = ExtResource("21_3nw1v")
 
 [node name="PauseMenuOverlay" type="CanvasLayer" parent="."]
 

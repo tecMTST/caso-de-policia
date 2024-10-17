@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cu1qimgoij27y"]
 
 [ext_resource type="Script" path="res://Scenes/Componentes/background.gd" id="1_7hkh1"]
-[ext_resource type="Texture2D" uid="uid://crwthb3l3qur3" path="res://Assets/Imagens/skyline.svg" id="2_h5mh1"]
 [ext_resource type="Texture2D" uid="uid://cqjnnfifuguv1" path="res://Assets/Imagens/aprovacao_balao.svg" id="2_stft3"]
 [ext_resource type="Texture2D" uid="uid://qhtui31hi4wi" path="res://Assets/Imagens/desaprovacao_balao.svg" id="3_kfo7p"]
 [ext_resource type="Texture2D" uid="uid://cwvthvef1h81t" path="res://Assets/Imagens/criminalidade_balao.svg" id="4_wi8mn"]
 [ext_resource type="Texture2D" uid="uid://ph408a8j3red" path="res://Assets/Imagens/orcamento_balao.svg" id="5_05bcl"]
+[ext_resource type="Texture2D" uid="uid://bddkaauf18lxi" path="res://Assets/Imagens/skylineMask.svg" id="6_t272c"]
 
 [sub_resource type="Curve" id="Curve_asnpt"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.486667, 1), 0.0, 0.0, 0, 0, Vector2(0.993333, 0), 0.0, 0.0, 0, 0]
@@ -74,6 +74,7 @@ process_material = SubResource("ParticleProcessMaterial_nj30k")
 texture = ExtResource("5_05bcl")
 
 [node name="Predios" type="TextureRect" parent="."]
+modulate = Color(0.360784, 0.298039, 0.321569, 1)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -82,6 +83,6 @@ anchor_bottom = 1.0
 offset_top = -430.8
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_h5mh1")
+texture = ExtResource("6_t272c")
 expand_mode = 5
 stretch_mode = 4

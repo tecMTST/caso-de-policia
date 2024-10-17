@@ -9,7 +9,8 @@ enum Estados {
 	EsperarAnimarDia,
 	EsperarEscolha,
 	EsperarDia,
-	EsperarNoticia
+	EsperarNoticia,
+	FimDeTurno
 }
 enum Turnos {
 	Manha,
@@ -22,7 +23,6 @@ var criminalidade : float
 var popularidade : float
 var dia : int = 1
 var sugestoesUsadas : Array[int] = []
-var custoAtual : float  = 0
 var dinheiro : float  = 0
 var sugestaoA : Sugestao
 var sugestaoB : Sugestao
@@ -53,6 +53,7 @@ var titulosNoticia : Array[String] = ["res://Assets/Imagens/provincia.png", "res
 @onready var progress_popularidade: ProgressBar = $Base/Rodape/BoxRodape/BoxCrime3/ProgressPopularidade
 @onready var abertura: Control = $Base/Abertura
 @onready var topo: Control = $Base/Topo
+@onready var texto_pergunta: Label = $Base/Topo/BoxTopo/TextoPergunta
 
 
 func _ready() -> void:
@@ -89,7 +90,8 @@ func _process(delta: float) -> void:
 			ProcessarMostrarNoticia()
 		Estados.EsperarNoticia:
 			pass
-	DefinirJogo()
+		Estados.FimDeTurno:			
+			FinalizarTurno()
 	
 func ProcessarTempoAbertura(delta : float):
 	timerAbertura -= delta
@@ -109,8 +111,9 @@ func ProcessarMudarTarde():
 	estado = Estados.EsperarDia
 	turno = Turnos.Tarde
 	douces.EsconderTexto()
-	lourdes.EsconderTexto()
+	lourdes.EsconderTexto()	
 	background.TransicaoTarde(popuUp, popuDown, crimeUp, custoUp)
+	background.DefinirPredios(inclinacao)
 	AnimarBarras()
 
 func ProcessarDefinirSugestao():
@@ -124,38 +127,42 @@ func ProcessarDefinirSugestao():
 	sugestoesUsadas.append(sugestaoB.Id)	
 	douces.DefinirTexto(sugestaoA.Texto, sugestaoA.Custo)
 	lourdes.DefinirTexto(sugestaoB.Texto, sugestaoB.Custo)
+	create_tween().tween_property(texto_pergunta, "modulate:a", 1, 0.5)
 	estado = Estados.EsperarEscolha
 	
 func ProcessarMostrarNoticia():
 	estado = Estados.EsperarNoticia
 	var possivel = gameData.Noticias.filter(func (i: Noticia) : return i.SugestaoId == ultimaSugestaoId)
-	noticiaAtual = possivel.pick_random() as Noticia
-	if noticiaAtual:
+	if len(possivel) > 0:
+		noticiaAtual = possivel.pick_random() as Noticia
 		titulo_noticia.texture = load(titulosNoticia.pick_random())
 		texto_noticia.text = noticiaAtual.Texto
 		create_tween().tween_property(texture_noticia, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(tempoEspera).timeout
 	else:
-		finalizarTurno()
+		FecharNoticia()
 	
 func FecharNoticia():
 	create_tween().tween_property(texture_noticia, "modulate:a", 0, 0.5)
-	background.TransicaoManha()
+	background.TransicaoManha()	
 	await get_tree().create_timer(tempoEspera).timeout
-	finalizarTurno()
+	estado = Estados.FimDeTurno
 	
-func finalizarTurno():
+func FinalizarTurno():
 	timerEspera = tempoEspera
-	dia += 1
-	dinheiro -= custoAtual		
+	dia += 1	
 	estado = Estados.DefinirSugestao
 	turno = Turnos.Manha
+	DefinirJogo()
 
 func SelecionarSugestao(sugestao : Sugestao):
+	create_tween().tween_property(texto_pergunta, "modulate:a", 0, 0.5)
 	ultimaSugestaoId  = sugestao.Id
-	custoAtual += sugestao.Custo
-	popularidade += sugestao.Popularidade
-	criminalidade += sugestao.Criminalidade
+	dinheiro -= sugestao.Custo
+	if popularidade > 0 and popularidade < 100:
+		popularidade += sugestao.Popularidade
+	if criminalidade > 0 and criminalidade < 100:
+		criminalidade += sugestao.Criminalidade
 	popuUp = sugestao.Popularidade > 0
 	popuDown = sugestao.Popularidade < 0
 	crimeUp = sugestao.Criminalidade > 0
@@ -173,7 +180,7 @@ func DefinirJogo():
 	else:
 		texto_turno.text = "Tarde"	
 		
-	if dinheiro <= 0 or popularidade <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
+	if dinheiro <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
 		FinalizarJogo()
 		
 func AnimarBarras():

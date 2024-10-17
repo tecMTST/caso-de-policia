@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="440.3783mm"
-   height="339.20087mm"
-   viewBox="0 0 440.3783 339.20087"
+   width="420.07367mm"
+   height="298.25949mm"
+   viewBox="0 0 420.07367 298.25949"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="0.25606581"
-     inkscape:cx="589.69217"
-     inkscape:cy="482.2979"
+     inkscape:cx="589.69216"
+     inkscape:cy="326.08805"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -38,7 +38,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(88.370837,-3.9687491)">
+     transform="translate(88.370833,-44.910121)">
     <g
        id="Layer_2-2"
        data-name="Layer_2"
@@ -56,7 +56,7 @@
          style="fill:#8dbeb2" />
       <polygon
          class="cls-1"
-         points="474.73,747.94 280.09,1127.28 0,937.61 237.36,990.05 384.53,709.96 "
+         points="0,937.61 237.36,990.05 384.53,709.96 474.73,747.94 280.09,1127.28 "
          id="polygon1"
          style="fill:#8dbeb2" />
     </g>

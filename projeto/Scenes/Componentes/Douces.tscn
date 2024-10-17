@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dfqcfbixq4ovc" path="res://Assets/Imagens/douces_nao.png" id="3_8j5bu"]
 [ext_resource type="Texture2D" uid="uid://c1fu1ad3ngfa5" path="res://Assets/Imagens/douces_proposta.svg" id="4_4qcex"]
 [ext_resource type="Texture2D" uid="uid://dwrwu2k3fnqr5" path="res://Assets/Imagens/douces_nome.svg" id="5_4jo5y"]
+[ext_resource type="Texture2D" uid="uid://cw6hg6manegy0" path="res://Assets/Imagens/lurdes_cifra.svg" id="5_66wu4"]
 [ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_dp6b4"]
 [ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="7_yjxv3"]
-[ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_p46fe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
 font = ExtResource("6_dp6b4")
@@ -235,22 +235,23 @@ ImagemBalaoPressed = "res://Assets/Imagens/douces_proposta_pressed.svg"
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 161.0
-offset_top = -274.0
-offset_right = 816.208
-offset_bottom = 191.0
-scale = Vector2(1.13686, 1.13686)
+offset_left = 140.0
+offset_top = -246.0
+offset_right = 795.208
+offset_bottom = 219.0
+scale = Vector2(0.841, 0.841)
+pivot_offset = Vector2(390.986, 195.034)
 texture = ExtResource("4_4qcex")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
 layout_mode = 0
-offset_left = 102.035
-offset_top = 73.008
-offset_right = 635.035
-offset_bottom = 379.008
-scale = Vector2(0.868225, 0.868225)
+offset_left = 112.164
+offset_top = 22.8906
+offset_right = 645.164
+offset_bottom = 328.891
+scale = Vector2(0.979567, 0.979567)
 label_settings = SubResource("LabelSettings_hnq51")
 autowrap_mode = 3
 script = ExtResource("7_yjxv3")
@@ -259,44 +260,45 @@ Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
 layout_mode = 0
-offset_left = 244.533
-offset_top = 321.059
-offset_right = 535.533
-offset_bottom = 376.059
+offset_left = 391.429
+offset_top = -48.3789
+offset_right = 682.429
+offset_bottom = 6.62114
+scale = Vector2(0.76939, 0.76939)
 alignment = 2
 
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_p46fe")
+texture = ExtResource("5_66wu4")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo2" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_p46fe")
+texture = ExtResource("5_66wu4")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo3" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_p46fe")
+texture = ExtResource("5_66wu4")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo4" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_p46fe")
+texture = ExtResource("5_66wu4")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo5" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_p46fe")
+texture = ExtResource("5_66wu4")
 expand_mode = 2
 stretch_mode = 4
 
@@ -319,8 +321,8 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Botao" type="TouchScreenButton" parent="."]
-position = Vector2(308, 14)
-scale = Vector2(1.04, 1)
+position = Vector2(329, -14)
+scale = Vector2(0.869795, 0.836341)
 shape = SubResource("RectangleShape2D_ltpsc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

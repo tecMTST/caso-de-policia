@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dkkg7r2ygm26t" path="res://Assets/Imagens/lurdes_sim.png" id="3_n8yps"]
 [ext_resource type="Texture2D" uid="uid://bqh7skrugea8w" path="res://Assets/Imagens/lurdes_nao.png" id="4_820i1"]
 [ext_resource type="Texture2D" uid="uid://cwrt5n1v708tu" path="res://Assets/Imagens/lurdes_proposta.svg" id="5_1f2ds"]
+[ext_resource type="Texture2D" uid="uid://dfborj0um5c6e" path="res://Assets/Imagens/douces_cifra.svg" id="5_7u860"]
 [ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_kg6qv"]
 [ext_resource type="Texture2D" uid="uid://np8f8kwwyscp" path="res://Assets/Imagens/lurdes_nome.svg" id="6_su48b"]
 [ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="8_0c5g2"]
-[ext_resource type="Texture2D" uid="uid://ce5phgcw8s2cg" path="res://Assets/Imagens/orcamento.svg" id="8_oru4f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
 font = ExtResource("6_kg6qv")
@@ -235,11 +235,11 @@ ImagemBalaoPressed = "res://Assets/Imagens/lurdes_proposta_pressed.svg"
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -798.0
-offset_top = -254.0
-offset_right = -142.792
-offset_bottom = 211.0
-scale = Vector2(1.12445, 1.12445)
+offset_left = -780.0
+offset_top = -204.0
+offset_right = -124.792
+offset_bottom = 261.0
+scale = Vector2(0.841044, 0.841044)
 pivot_offset = Vector2(328, 212)
 texture = ExtResource("5_1f2ds")
 expand_mode = 3
@@ -247,11 +247,11 @@ stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
 layout_mode = 0
-offset_left = 41.6371
-offset_top = 78.6011
-offset_right = 574.637
-offset_bottom = 384.601
-scale = Vector2(0.85915, 0.85915)
+offset_left = 28.3725
+offset_top = 22.9493
+offset_right = 561.372
+offset_bottom = 328.949
+scale = Vector2(0.961223, 0.961223)
 label_settings = SubResource("LabelSettings_hnq51")
 autowrap_mode = 3
 script = ExtResource("8_0c5g2")
@@ -260,48 +260,49 @@ Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
 layout_mode = 0
-offset_left = 64.7595
-offset_top = 323.166
-offset_right = 355.76
-offset_bottom = 378.166
+offset_left = 48.5855
+offset_top = -47.2015
+offset_right = 339.586
+offset_bottom = 7.79847
+scale = Vector2(0.678843, 0.678843)
 
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_oru4f")
+texture = ExtResource("5_7u860")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo2" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_oru4f")
+texture = ExtResource("5_7u860")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo3" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_oru4f")
+texture = ExtResource("5_7u860")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo4" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_oru4f")
+texture = ExtResource("5_7u860")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Custo5" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_oru4f")
+texture = ExtResource("5_7u860")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(375, 0.598)
+position = Vector2(375, 0)
 rotation = 0.000344736
 sprite_frames = SubResource("SpriteFrames_8jxtn")
 speed_scale = 0.0
@@ -320,8 +321,8 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Botao" type="TouchScreenButton" parent="."]
-position = Vector2(-291, 18)
-scale = Vector2(1.2, 1)
+position = Vector2(-309, 9)
+scale = Vector2(0.966186, 0.805155)
 shape = SubResource("RectangleShape2D_ltpsc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

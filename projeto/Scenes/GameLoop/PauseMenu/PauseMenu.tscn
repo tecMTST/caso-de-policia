@@ -1,24 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc8qq8nuav8ol"]
+[gd_scene load_steps=9 format=3 uid="uid://cc8qq8nuav8ol"]
 
 [ext_resource type="Script" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.gd" id="1_0jyjq"]
-[ext_resource type="Texture2D" uid="uid://dq8r0v5ofqi03" path="res://Assets/Imagens/manchete_balao.svg" id="2_iftn7"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="3_ch5ns"]
+[ext_resource type="Texture2D" uid="uid://lg6sjwjsp0p1" path="res://Assets/Imagens/menu_pause.svg" id="2_r1hy8"]
+[ext_resource type="FontFile" uid="uid://dvp2jquyd01n7" path="res://Assets/Fontes/MochiyPopOne-Regular.ttf" id="3_pb6r2"]
+[ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="4_6neoc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fm7tr"]
-font = ExtResource("3_ch5ns")
-font_size = 95
-font_color = Color(0.360784, 0.294118, 0.317647, 1)
+font = ExtResource("3_pb6r2")
+font_size = 67
+font_color = Color(0.886275, 0.921569, 0.74902, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3otv"]
-size = Vector2(300, 100)
+size = Vector2(340, 50)
 
-[sub_resource type="LabelSettings" id="LabelSettings_eyo3y"]
-font = ExtResource("3_ch5ns")
-font_size = 60
-font_color = Color(0.360784, 0.294118, 0.317647, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_jjrnx"]
+font = ExtResource("4_6neoc")
+font_size = 41
+font_color = Color(0.886275, 0.921569, 0.74902, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3hur"]
-size = Vector2(300, 100)
+size = Vector2(520, 50)
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -43,96 +44,84 @@ offset_bottom = -285.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(15.024, 15.024)
-texture = ExtResource("2_iftn7")
+texture = ExtResource("2_r1hy8")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Titulo" type="Label" parent="Fundo"]
+[node name="Titulo" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -55.0
-offset_right = 55.0
-offset_bottom = 121.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -214.5
+offset_right = 190.5
+offset_bottom = -75.5
 grow_horizontal = 2
-scale = Vector2(0.0793412, 0.0793412)
-pivot_offset = Vector2(80, 0)
+grow_vertical = 2
+pivot_offset = Vector2(204.243, 74.5861)
 text = "Pausa!"
 label_settings = SubResource("LabelSettings_fm7tr")
 horizontal_alignment = 1
 
-[node name="Botoes" type="Control" parent="Fundo"]
+[node name="Botoes" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 13.3786
-offset_bottom = 13.3786
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.821382, 0.408833)
-pivot_offset = Vector2(24.4942, 3.8147e-06)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Fundo/Botoes"]
-layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = -49.0
+offset_left = -125.0
+offset_top = -127.0
+offset_right = 125.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.21393, 1)
-theme_override_constants/separation = 30
-alignment = 1
+pivot_offset = Vector2(125, 125)
 
-[node name="ControlVoltar" type="Control" parent="Fundo/Botoes/VBoxContainer"]
-layout_mode = 2
-
-[node name="VoltarAojogo" type="TouchScreenButton" parent="Fundo/Botoes/VBoxContainer/ControlVoltar"]
-position = Vector2(20.9118, -1.02062)
-scale = Vector2(0.1, 0.1)
+[node name="VoltarAojogo" type="TouchScreenButton" parent="Botoes"]
+position = Vector2(121, 178)
 shape = SubResource("RectangleShape2D_y3otv")
 
-[node name="LabelVoltar" type="Label" parent="Fundo/Botoes/VBoxContainer/ControlVoltar/VoltarAojogo"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -122.159
-offset_top = -42.3294
-offset_right = 128.841
-offset_bottom = 33.6706
+[node name="Label" type="Label" parent="Botoes/VoltarAojogo"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -30.0
+offset_right = 158.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+pivot_offset = Vector2(154, 28)
 text = "Voltar ao Jogo"
-label_settings = SubResource("LabelSettings_eyo3y")
+label_settings = SubResource("LabelSettings_jjrnx")
 horizontal_alignment = 1
 
-[node name="ControlMenu" type="Control" parent="Fundo/Botoes/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VoltarAoMenu" type="TouchScreenButton" parent="Fundo/Botoes/VBoxContainer/ControlMenu"]
-position = Vector2(20.8451, -15.3694)
-scale = Vector2(0.1, 0.1)
+[node name="VoltarAoMenu" type="TouchScreenButton" parent="Botoes"]
+position = Vector2(121, 280)
 shape = SubResource("RectangleShape2D_w3hur")
 
-[node name="LabelMenu" type="Label" parent="Fundo/Botoes/VBoxContainer/ControlMenu/VoltarAoMenu"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -129.323
-offset_top = -41.3584
-offset_right = 121.677
-offset_bottom = 34.6416
+[node name="Label" type="Label" parent="Botoes/VoltarAoMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -31.0
+offset_right = 257.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-text = "Voltar ao mENU"
-label_settings = SubResource("LabelSettings_eyo3y")
+pivot_offset = Vector2(154, 28)
+text = "Voltar ao menu principal"
+label_settings = SubResource("LabelSettings_jjrnx")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Fundo/Botoes/VBoxContainer/ControlVoltar/VoltarAojogo" to="." method="_on_voltar_aojogo_pressed"]
-[connection signal="pressed" from="Fundo/Botoes/VBoxContainer/ControlMenu/VoltarAoMenu" to="." method="_on_voltar_ao_menu_pressed"]
+[connection signal="pressed" from="Botoes/VoltarAojogo" to="." method="_on_voltar_aojogo_pressed"]
+[connection signal="pressed" from="Botoes/VoltarAoMenu" to="." method="_on_voltar_ao_menu_pressed"]

@@ -13,26 +13,19 @@ func DefinirResultado():
 	
 	if EstadoGlobal.Inclinacao < 0 and EstadoGlobal.Dinheiro <= 0:
 		texto.text = EstadoGlobal.GameData.Configuracoes.TextoDerrotaDinheiro
-		background.Emitir(false, true, false, false)
-		return
-	
-	if EstadoGlobal.Criminalidade < EstadoGlobal.GameData.Configuracoes.CriminalidadeVitoriaAlta or EstadoGlobal.Popularidade >= EstadoGlobal.GameData.Configuracoes.PopularidadeVitoriaAlta:
+		background.Emitir(false, true, false, false)	
+	elif EstadoGlobal.Criminalidade <= EstadoGlobal.GameData.Configuracoes.CriminalidadeVitoriaAlta or EstadoGlobal.Popularidade >= EstadoGlobal.GameData.Configuracoes.PopularidadeVitoriaAlta:
 		texto.text = EstadoGlobal.GameData.Configuracoes.TextoVitoriaAlta
 		background.Emitir(true, false, false, false)
-		return
-		
-	if EstadoGlobal.Criminalidade < EstadoGlobal.GameData.Configuracoes.CriminalidadeVitoriaModerada or EstadoGlobal.Popularidade >= EstadoGlobal.GameData.Configuracoes.PopularidadeVitoriaModerada:
+	elif EstadoGlobal.Criminalidade <= EstadoGlobal.GameData.Configuracoes.CriminalidadeVitoriaModerada or EstadoGlobal.Popularidade >= EstadoGlobal.GameData.Configuracoes.PopularidadeVitoriaModerada:
 		texto.text = EstadoGlobal.GameData.Configuracoes.TextoVitoriaModerada
 		background.Emitir(true, false, false, false)
-		return 
-		
-	if EstadoGlobal.Inclinacao > EstadoGlobal.GameData.Configuracoes.InclinacaoNeutro:	
+	elif EstadoGlobal.Inclinacao >= EstadoGlobal.GameData.Configuracoes.InclinacaoNeutro or EstadoGlobal.Criminalidade <= EstadoGlobal.GameData.Configuracoes.CriminalidadeInicial:	
 		texto.text = EstadoGlobal.GameData.Configuracoes.TextoNeutro
 		background.Emitir(false, false, false, false)
-		return	
-	
-	texto.text = EstadoGlobal.GameData.Configuracoes.TextoDerrota
-	background.Emitir(false, true, true, false)
+	else:		
+		texto.text = EstadoGlobal.GameData.Configuracoes.TextoDerrota
+		background.Emitir(false, true, true, false)
 
 
 func _on_iniciar_pressed() -> void:

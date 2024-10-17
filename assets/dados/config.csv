@@ -1,9 +1,5 @@
 ﻿LimiteDias;CriminalidadeInicial;PopularidadeInicial;DinheiroInicial;TempoTransicao;CriminalidadeVitoriaModerada;CriminalidadeVitoriaAlta;PopularidadeVitoriaAlta;PopularidadeVitoriaModerada;InclinacaoNeutro;TextoVitoriaModerada;TextoVitoriaAlta;TextoDerrota;TextoDerrotaDinheiro;TextoNeutro
-7;70;50;100;2;50;30;90;60;0;Parabéns você tornou São Paulo um lugar mais seguro de se viver!;Você não conseguiu, a criminalidade de São Paulo aumentou.;Você faliu a cidade!;São Paulo sobreviveu.;
-;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
+7;70;50;100;2;50;30;90;60;0;Parabéns! A criminalidade diminuiu!;Parabéns você tornou São Paulo um lugar mais seguro de se viver!;Você não conseguiu, a criminalidade de São Paulo aumentou.;Você faliu a cidade!;São Paulo sobreviveu.
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;

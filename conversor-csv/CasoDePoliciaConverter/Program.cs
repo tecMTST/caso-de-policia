@@ -76,9 +76,9 @@ static void RunOptions(Options opts)
     {
         gameData.Configuracoes = new Configuracoes
         {
-            Criminalidade = float.TryParse(configLine["CriminalidadeInicial"], out var crime) ? crime : 0,
-            Popularidade = float.TryParse(configLine["PopularidadeInicial"], out var popu) ? popu : 0,
-            Dinheiro = float.TryParse(configLine["DinheiroInicial"], out var cash) ? cash : 0,
+            CriminalidadeInicial = float.TryParse(configLine["CriminalidadeInicial"], out var crime) ? crime : 0,
+            PopularidadeInicial = float.TryParse(configLine["PopularidadeInicial"], out var popu) ? popu : 0,
+            DinheiroInicial = float.TryParse(configLine["DinheiroInicial"], out var cash) ? cash : 0,
             LimiteDias = int.TryParse(configLine["LimiteDias"], out var days) ? days : 0,
             TempoTransicao = float.TryParse(configLine["TempoTransicao"], out var time) ? time : 0,
             CriminalidadeVitoriaAlta = float.TryParse(configLine["CriminalidadeVitoriaAlta"], out var crimeAlta) ? crimeAlta : 0,

@@ -4,11 +4,11 @@ namespace CasoDePoliciaConverter.Classes
 {
     internal class Configuracoes
     {    
-        public float Criminalidade { get; set; } = 0;
+        public float CriminalidadeInicial { get; set; } = 0;
         
-        public float Popularidade { get; set; } = 0;
+        public float PopularidadeInicial { get; set; } = 0;
 
-        public float Dinheiro { get; set; } = 0;
+        public float DinheiroInicial { get; set; } = 0;
 
         public float TempoTransicao { get; set; } = 0;
 

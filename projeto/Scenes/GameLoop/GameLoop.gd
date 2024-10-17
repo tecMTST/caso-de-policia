@@ -103,7 +103,7 @@ func ProcessarAnimarDia():
 	create_tween().tween_property(abertura, "modulate:a", 0, 0.8)
 	await get_tree().create_timer(0.8).timeout
 	create_tween().tween_property(topo, "modulate:a", 1, 0.5)
-	create_tween().tween_property(topo, "position:y", 24, 1)
+	create_tween().tween_property(topo, "position:y", 35, 1)
 	await get_tree().create_timer(1).timeout
 	estado = Estados.DefinirSugestao
 

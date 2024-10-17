@@ -1,9 +1,9 @@
 extends Node
 class_name Configuracoes
 
-var Criminalidade : float = 50
-var Popularidade : float = 50
-var Dinheiro : float = 20
+var CriminalidadeInicial : float = 50
+var PopularidadeInicial : float = 50
+var DinheiroInicial : float = 20
 var TempoTransicao : float = 2
 var LimiteDias : int = 7
 var CriminalidadeVitoriaAlta : float = 30

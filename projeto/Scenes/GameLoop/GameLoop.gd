@@ -60,9 +60,9 @@ func _ready() -> void:
 	abertura.modulate.a = 0
 	create_tween().tween_property(abertura, "modulate:a", 1, 0.5)
 	gameData = GameDataLoader.LoadGameData()
-	criminalidade = gameData.Configuracoes.Criminalidade
-	popularidade = gameData.Configuracoes.Popularidade
-	dinheiro = gameData.Configuracoes.Dinheiro
+	criminalidade = gameData.Configuracoes.CriminalidadeInicial
+	popularidade = gameData.Configuracoes.PopularidadeInicial
+	dinheiro = gameData.Configuracoes.DinheiroInicial
 	background.TempoTransicao = gameData.Configuracoes.TempoTransicao
 	tempoEspera = gameData.Configuracoes.TempoTransicao
 	timerEspera = tempoEspera	

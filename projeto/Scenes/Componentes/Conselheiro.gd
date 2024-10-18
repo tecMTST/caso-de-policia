@@ -84,7 +84,7 @@ func DefinirExpressao(expressao: Expressoes):
 			create_tween().tween_property(balao, "scale", Vector2(0.8, 0.8), tempoMovimento)
 
 func _on_botao_pressed() -> void:	
-	if Ativo:
+	if Ativo:		
 		Ativo = false
 		DefinirExpressao(Expressoes.Sim)
 		emit_signal("Selecionar")

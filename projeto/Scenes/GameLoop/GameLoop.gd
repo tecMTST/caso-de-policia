@@ -10,6 +10,7 @@ enum Estados {
 	EsperarEscolha,
 	EsperarDia,
 	EsperarNoticia,
+	EsperarFecharNoticia,
 	FimDeTurno,
 	FimDeJogo
 }
@@ -104,6 +105,8 @@ func _process(delta: float) -> void:
 		Estados.MostrarNoticia:
 			ProcessarMostrarNoticia()
 		Estados.EsperarNoticia:
+			pass
+		Estados.EsperarFecharNoticia:
 			pass
 		Estados.FimDeTurno:			
 			FinalizarTurno()
@@ -254,6 +257,7 @@ func _on_pause_menu_resumed() -> void:
 
 func _on_fechar_noticia_pressed() -> void:
 	if estado == Estados.EsperarNoticia:
+		estado = Estados.EsperarFecharNoticia
 		FecharNoticia()
 
 func _on_touch_screen_button_pressed() -> void:

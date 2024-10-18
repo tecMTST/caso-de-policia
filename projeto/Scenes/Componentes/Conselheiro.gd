@@ -7,13 +7,15 @@ enum Expressoes{
 	Nao	
 }
 
+const tempoMovimento: float = 0.2
+
 signal Selecionar
 
 @export var ImagemBalao : String = ""
 @export var ImagemBalaoPressed : String = ""
 
 @onready var sprite: AnimatedSprite2D = $Sprite
-@onready var textoSugestao: TimedLabel = $Balao/Texto
+@onready var textoSugestao: Label = $Balao/Texto
 @onready var botao: TouchScreenButton = $Botao
 @onready var nome: TextureRect = $Sprite/PivotNome/Nome
 @onready var balao: TextureRect = $Balao
@@ -43,10 +45,9 @@ func DefinirTexto(texto : String, custo: int):
 	custo_3.visible = custo >= 10
 	custo_4.visible = custo >= 20
 	custo_5.visible = custo >= 40
-	create_tween().tween_property(balao,"modulate:a", 1, 0.5)
-	create_tween().tween_property(nome,"modulate:a", 1, 0.5)	
-	textoSugestao.define_text(texto)
-	textoSugestao.start()
+	create_tween().tween_property(balao,"modulate:a", 1, tempoMovimento)
+	create_tween().tween_property(nome,"modulate:a", 1, tempoMovimento)	
+	textoSugestao.text = texto
 	Ativo = true
 	
 func __limpar():
@@ -59,9 +60,9 @@ func __limpar():
 	DefinirExpressao(Expressoes.Neutro)
 
 func EsconderTexto():
-	create_tween().tween_property(balao,"modulate:a", 0, 0.5)
-	create_tween().tween_property(nome,"modulate:a", 0, 0.5)
-	await get_tree().create_timer(0.5).timeout
+	create_tween().tween_property(balao,"modulate:a", 0, tempoMovimento)
+	create_tween().tween_property(nome,"modulate:a", 0, tempoMovimento)
+	await get_tree().create_timer(tempoMovimento).timeout
 	__limpar()
 	balao.texture = load(ImagemBalao)
 	animation_player.play("sair")	
@@ -70,17 +71,17 @@ func DefinirExpressao(expressao: Expressoes):
 	match expressao:
 		Expressoes.Neutro:
 			sprite.frame = 0
-			create_tween().tween_property(sprite, "scale", spriteOriginaSize, 1)
-			create_tween().tween_property(balao, "scale", balaoOriginaSize, 1)
+			create_tween().tween_property(sprite, "scale", spriteOriginaSize, tempoMovimento)
+			create_tween().tween_property(balao, "scale", balaoOriginaSize, tempoMovimento)
 		Expressoes.Sim:
 			sprite.frame = 1
 			balao.texture = load(ImagemBalaoPressed)
-			create_tween().tween_property(sprite,"scale", Vector2(1.2, 1.2), 2)
-			create_tween().tween_property(balao, "scale", Vector2(1.2, 1.2), 2)
+			create_tween().tween_property(sprite,"scale", Vector2(1.2, 1.2), tempoMovimento)
+			create_tween().tween_property(balao, "scale", Vector2(1.2, 1.2), tempoMovimento)
 		Expressoes.Nao:
 			sprite.frame = 2
-			create_tween().tween_property(sprite, "scale", Vector2(0.8, 0.8), 2)
-			create_tween().tween_property(balao, "scale", Vector2(0.8, 0.8), 2)
+			create_tween().tween_property(sprite, "scale", Vector2(0.8, 0.8), tempoMovimento)
+			create_tween().tween_property(balao, "scale", Vector2(0.8, 0.8), tempoMovimento)
 
 func _on_botao_pressed() -> void:	
 	if Ativo:

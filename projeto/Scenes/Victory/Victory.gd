@@ -5,6 +5,9 @@ extends Node2D
 @onready var texto: Label = $Base/Texto
 
 func _ready() -> void:
+	AudioPlayer.Iniciar()
+	AudioPlayer.TocarBackground()
+	AudioPlayer.MutarForeground()
 	DefinirResultado()
 
 func DefinirResultado():

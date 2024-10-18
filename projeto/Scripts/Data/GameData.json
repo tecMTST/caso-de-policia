@@ -1,255 +1,255 @@
-﻿{
+{
   "Sugestoes": [
-    {
-      "Id": "1",
-      "Conselheiro": "Lurdes",
-      "Texto": "Remover câmera dos uniformes policiais",
-      "Custo": 10,
-      "Criminalidade": 10,
-      "Popularidade": -20
-    },
-    {
-      "Id": "2",
-      "Conselheiro": "Douces",
-      "Texto": "Investigar 3 lojas de revenda de celulares",
-      "Custo": 5,
-      "Criminalidade": -5,
-      "Popularidade": 10
-    },
-    {
-      "Id": "3",
-      "Conselheiro": "Douces",
-      "Texto": "Treinamento mais moderno para os agentes",
-      "Custo": 5,
-      "Criminalidade": -10,
-      "Popularidade": 10
-    },
-    {
-      "Id": "4",
-      "Conselheiro": "Lurdes",
-      "Texto": "Armamento mais pesado para os policiais",
-      "Custo": 35,
-      "Criminalidade": 0,
-      "Popularidade": 5
-    },
-    {
-      "Id": "5",
-      "Conselheiro": "Lurdes",
-      "Texto": "Abordagem mais violentas em zonas de conflito",
-      "Custo": 20,
-      "Criminalidade": -5,
-      "Popularidade": -30
-    },
-    {
-      "Id": "6",
-      "Conselheiro": "Douces",
-      "Texto": "Ampliação de patrulhas contra a violência doméstica ",
-      "Custo": 5,
-      "Criminalidade": -20,
-      "Popularidade": 20
-    },
-    {
-      "Id": "7",
-      "Conselheiro": "Douces",
-      "Texto": "Policiamento de proximidade em zonas mais conflitivas",
-      "Custo": 5,
-      "Criminalidade": -20,
-      "Popularidade": 20
-    },
-    {
-      "Id": "8",
-      "Conselheiro": "Douces",
-      "Texto": "Contratação de psicólogos para policiais com traumas",
-      "Custo": 10,
-      "Criminalidade": -5,
-      "Popularidade": 5
-    },
-    {
-      "Id": "9",
-      "Conselheiro": "Lurdes",
-      "Texto": "Tirar patrulhas para violência doméstica e colocá-las na cracolândia",
-      "Custo": 10,
-      "Criminalidade": -10,
-      "Popularidade": -25
-    },
-    {
-      "Id": "10",
-      "Conselheiro": "Lurdes",
-      "Texto": "Criação de uma força especial para acabar com a cracolândia",
-      "Custo": 20,
-      "Criminalidade": -5,
-      "Popularidade": 20
-    },
-    {
-      "Id": "11",
-      "Conselheiro": "Douces",
-      "Texto": "Ampliação de médicos, psicólogos e assistentes sociais na área da cracolândia",
-      "Custo": 5,
-      "Criminalidade": -10,
-      "Popularidade": 20
-    },
-    {
-      "Id": "12",
-      "Conselheiro": "Douces",
-      "Texto": "Fazer ronda policial perto dos pontos de ônibus da cidade",
-      "Custo": 5,
-      "Criminalidade": -10,
-      "Popularidade": 15
-    },
-    {
-      "Id": "13",
-      "Conselheiro": "Douces",
-      "Texto": "GCM na porta das escolas em horários de entrada e saída",
-      "Custo": 5,
-      "Criminalidade": -10,
-      "Popularidade": 20
-    },
-    {
-      "Id": "14",
-      "Conselheiro": "Lurdes",
-      "Texto": "Tomar as barracas das pessoas dormindo nas ruas",
-      "Custo": 10,
-      "Criminalidade": 20,
-      "Popularidade": -10
-    },
-    {
-      "Id": "15",
-      "Conselheiro": "Lurdes",
-      "Texto": "Mandar a GCM proibir a distribuição de marmitas na cracolândia",
-      "Custo": 5,
-      "Criminalidade": 20,
-      "Popularidade": -20
-    },
-    {
-      "Id": "16",
-      "Conselheiro": "Douces",
-      "Texto": "Limpar o centro histórico de São Paulo",
-      "Custo": 10,
-      "Criminalidade": -20,
-      "Popularidade": 25
-    },
-    {
-      "Id": "17",
-      "Conselheiro": "Lurdes",
-      "Texto": "Iluminação do centro histórico com lâmpadas de LED nas cores verde e amarelo",
-      "Custo": 30,
-      "Criminalidade": 0,
-      "Popularidade": 0
-    },
-    {
-      "Id": "18",
-      "Conselheiro": "Lurdes",
-      "Texto": "Falar com meu cunhado do PCC pra maneirar no centro",
-      "Custo": 40,
-      "Criminalidade": -15,
-      "Popularidade": -50
-    }
+	{
+	  "Id": "1",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Remover câmera dos uniformes policiais",
+	  "Custo": 10,
+	  "Criminalidade": 10,
+	  "Popularidade": -20
+	},
+	{
+	  "Id": "2",
+	  "Conselheiro": "Douces",
+	  "Texto": "Investigar 3 lojas de revenda de celulares",
+	  "Custo": 5,
+	  "Criminalidade": -5,
+	  "Popularidade": 10
+	},
+	{
+	  "Id": "3",
+	  "Conselheiro": "Douces",
+	  "Texto": "Treinamento mais moderno para os agentes",
+	  "Custo": 5,
+	  "Criminalidade": -10,
+	  "Popularidade": 10
+	},
+	{
+	  "Id": "4",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Armamento mais pesado para os policiais",
+	  "Custo": 35,
+	  "Criminalidade": 0,
+	  "Popularidade": 5
+	},
+	{
+	  "Id": "5",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Abordagem mais violentas em zonas de conflito",
+	  "Custo": 20,
+	  "Criminalidade": -5,
+	  "Popularidade": -30
+	},
+	{
+	  "Id": "6",
+	  "Conselheiro": "Douces",
+	  "Texto": "Ampliação de patrulhas contra a violência doméstica ",
+	  "Custo": 5,
+	  "Criminalidade": -20,
+	  "Popularidade": 20
+	},
+	{
+	  "Id": "7",
+	  "Conselheiro": "Douces",
+	  "Texto": "Policiamento de proximidade em zonas mais conflitivas",
+	  "Custo": 5,
+	  "Criminalidade": -20,
+	  "Popularidade": 20
+	},
+	{
+	  "Id": "8",
+	  "Conselheiro": "Douces",
+	  "Texto": "Contratação de psicólogos para policiais com traumas",
+	  "Custo": 10,
+	  "Criminalidade": -5,
+	  "Popularidade": 5
+	},
+	{
+	  "Id": "9",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Tirar patrulhas para violência doméstica e colocá-las na cracolândia",
+	  "Custo": 10,
+	  "Criminalidade": -10,
+	  "Popularidade": -25
+	},
+	{
+	  "Id": "10",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Criação de uma força especial para acabar com a cracolândia",
+	  "Custo": 20,
+	  "Criminalidade": -5,
+	  "Popularidade": 20
+	},
+	{
+	  "Id": "11",
+	  "Conselheiro": "Douces",
+	  "Texto": "Ampliação de médicos, psicólogos e assistentes sociais na área da cracolândia",
+	  "Custo": 5,
+	  "Criminalidade": -10,
+	  "Popularidade": 20
+	},
+	{
+	  "Id": "12",
+	  "Conselheiro": "Douces",
+	  "Texto": "Fazer ronda policial perto dos pontos de ônibus da cidade",
+	  "Custo": 5,
+	  "Criminalidade": -10,
+	  "Popularidade": 15
+	},
+	{
+	  "Id": "13",
+	  "Conselheiro": "Douces",
+	  "Texto": "GCM na porta das escolas em horários de entrada e saída",
+	  "Custo": 5,
+	  "Criminalidade": -10,
+	  "Popularidade": 20
+	},
+	{
+	  "Id": "14",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Tomar as barracas das pessoas dormindo nas ruas",
+	  "Custo": 10,
+	  "Criminalidade": 20,
+	  "Popularidade": -10
+	},
+	{
+	  "Id": "15",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Mandar a GCM proibir a distribuição de marmitas na cracolândia",
+	  "Custo": 5,
+	  "Criminalidade": 20,
+	  "Popularidade": -20
+	},
+	{
+	  "Id": "16",
+	  "Conselheiro": "Douces",
+	  "Texto": "Limpar o centro histórico de São Paulo",
+	  "Custo": 10,
+	  "Criminalidade": -20,
+	  "Popularidade": 25
+	},
+	{
+	  "Id": "17",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Iluminação do centro histórico com lâmpadas de LED nas cores verde e amarelo",
+	  "Custo": 30,
+	  "Criminalidade": 0,
+	  "Popularidade": 0
+	},
+	{
+	  "Id": "18",
+	  "Conselheiro": "Lurdes",
+	  "Texto": "Falar com meu cunhado do PCC pra maneirar no centro",
+	  "Custo": 40,
+	  "Criminalidade": -15,
+	  "Popularidade": -50
+	}
   ],
   "Noticias": [
-    {
-      "Texto": "Roubos pelo PCC estranhamente diminuíram na capital esta semana",
-      "SugestaoId": "18"
-    },
-    {
-      "Texto": "Centenas de novos pontos de venda de drogas aparecem na cidade após desaparição da cracolândia.",
-      "SugestaoId": "10"
-    },
-    {
-      "Texto": "Aumenta o número de mortos inocentes após entrega de armas pesadas a policiais.",
-      "SugestaoId": "4"
-    },
-    {
-      "Texto": "Na última semana o número de celulares roubados na capital diminuiu drasticamente.",
-      "SugestaoId": "2"
-    },
-    {
-      "Texto": "Infelizmente a porcentagem de assassinatos por violência doméstica está aumentando na capital. ",
-      "SugestaoId": "9"
-    },
-    {
-      "Texto": "Os furtos ao redor dos pontos de ônibus da capital diminuíram nessa última semana.",
-      "SugestaoId": "12"
-    },
-    {
-      "Texto": "Pessoa sem-teto foi levada ao hospital por ter que comer alimentos encontrados no lixo.",
-      "SugestaoId": "15"
-    },
-    {
-      "Texto": "“Eu me sinto até mais segura de andar na rua” diz moradora aposentada após mutirão de limpeza no centro de SP",
-      "SugestaoId": "16"
-    },
-    {
-      "Texto": "“Primeiro rouba a merenda e agora quer a marmita dos mendigos?” motorista indignado com ação da GCM",
-      "SugestaoId": "15"
-    },
-    {
-      "Texto": "A maior queda na porcentagem de violência doméstica ocorre em São Paulo, diz estudo.",
-      "SugestaoId": "6"
-    },
-    {
-      "Texto": "Usar mais violência para acabar com violência não é a solução” diz especialista da ONU. Prefeito discorda.",
-      "SugestaoId": "5"
-    },
-    {
-      "Texto": "Furtos e brigas são cada vez mais difíceis de ver na cracolândia após ação social do governo. ",
-      "SugestaoId": "11"
-    },
-    {
-      "Texto": "Avenida Paulista bate récorde de pessoas em situação de rua dormindo nas calçadas, durante o dia",
-      "SugestaoId": "14"
-    },
-    {
-      "Texto": "O número de celulares roubados em São Paulo segue em queda",
-      "SugestaoId": "2"
-    },
-    {
-      "Texto": "“Agora nos sentimos muito mais seguros sabendo que todo dia terá uma viatura vigiando a entrada e saída de nossos filhos” comenta morador.",
-      "SugestaoId": "13"
-    },
-    {
-      "Texto": "Após limpeza do centro histórico, o número de turistas e visitantes  duplicou na última semana.",
-      "SugestaoId": "16"
-    },
-    {
-      "Texto": "O novo treinamento para os agentes diminui as abordagens violentas e o estresse em momentos de conflito, diz especialista. ",
-      "SugestaoId": "3"
-    },
-    {
-      "Texto": "Após a polêmica remoção da câmera corporal, número de mortes de suspeitos triplica na última semana.",
-      "SugestaoId": "1"
-    },
-    {
-      "Texto": "“Antes eu tinha medo de passar por esse bairro, mas agora está bem mais seguro”, disseram vários trabalhadores que entrevistamos nos últimos dias.",
-      "SugestaoId": "7"
-    },
-    {
-      "Texto": "Projeto “PpP” traz de volta ao serviço mais de 85% dos tratados.",
-      "SugestaoId": "8"
-    },
-    {
-      "Texto": "Conflitos na cracolândia se mantêm ao mesmo nível do ano passado, enquanto mais mulheres são assassinadas por seus parceiros.",
-      "SugestaoId": "9"
-    },
-    {
-      "Texto": "O que precisamos é de mais postes nas ruas mais periféricas, não luzinhas coloridas! Moradores indignados por luzes com novas cores nos seus bairros",
-      "SugestaoId": "17"
-    }
+	{
+	  "Texto": "Roubos pelo PCC estranhamente diminuíram na capital esta semana",
+	  "SugestaoId": "18"
+	},
+	{
+	  "Texto": "Centenas de novos pontos de venda de drogas aparecem na cidade após desaparição da cracolândia.",
+	  "SugestaoId": "10"
+	},
+	{
+	  "Texto": "Aumenta o número de mortos inocentes após entrega de armas pesadas a policiais.",
+	  "SugestaoId": "4"
+	},
+	{
+	  "Texto": "Na última semana o número de celulares roubados na capital diminuiu drasticamente.",
+	  "SugestaoId": "2"
+	},
+	{
+	  "Texto": "Infelizmente a porcentagem de assassinatos por violência doméstica está aumentando na capital. ",
+	  "SugestaoId": "9"
+	},
+	{
+	  "Texto": "Os furtos ao redor dos pontos de ônibus da capital diminuíram nessa última semana.",
+	  "SugestaoId": "12"
+	},
+	{
+	  "Texto": "Pessoa sem-teto foi levada ao hospital por ter que comer alimentos encontrados no lixo.",
+	  "SugestaoId": "15"
+	},
+	{
+	  "Texto": "“Eu me sinto até mais segura de andar na rua” diz moradora aposentada após mutirão de limpeza no centro de SP",
+	  "SugestaoId": "16"
+	},
+	{
+	  "Texto": "“Primeiro rouba a merenda e agora quer a marmita dos mendigos?” motorista indignado com ação da GCM",
+	  "SugestaoId": "15"
+	},
+	{
+	  "Texto": "A maior queda na porcentagem de violência doméstica ocorre em São Paulo, diz estudo.",
+	  "SugestaoId": "6"
+	},
+	{
+	  "Texto": "Usar mais violência para acabar com violência não é a solução” diz especialista da ONU. Prefeito discorda.",
+	  "SugestaoId": "5"
+	},
+	{
+	  "Texto": "Furtos e brigas são cada vez mais difíceis de ver na cracolândia após ação social do governo. ",
+	  "SugestaoId": "11"
+	},
+	{
+	  "Texto": "Avenida Paulista bate récorde de pessoas em situação de rua dormindo nas calçadas, durante o dia",
+	  "SugestaoId": "14"
+	},
+	{
+	  "Texto": "O número de celulares roubados em São Paulo segue em queda",
+	  "SugestaoId": "2"
+	},
+	{
+	  "Texto": "“Agora nos sentimos muito mais seguros sabendo que todo dia terá uma viatura vigiando a entrada e saída de nossos filhos” comenta morador.",
+	  "SugestaoId": "13"
+	},
+	{
+	  "Texto": "Após limpeza do centro histórico, o número de turistas e visitantes  duplicou na última semana.",
+	  "SugestaoId": "16"
+	},
+	{
+	  "Texto": "O novo treinamento para os agentes diminui as abordagens violentas e o estresse em momentos de conflito, diz especialista. ",
+	  "SugestaoId": "3"
+	},
+	{
+	  "Texto": "Após a polêmica remoção da câmera corporal, número de mortes de suspeitos triplica na última semana.",
+	  "SugestaoId": "1"
+	},
+	{
+	  "Texto": "“Antes eu tinha medo de passar por esse bairro, mas agora está bem mais seguro”, disseram vários trabalhadores que entrevistamos nos últimos dias.",
+	  "SugestaoId": "7"
+	},
+	{
+	  "Texto": "Projeto “PpP” traz de volta ao serviço mais de 85% dos tratados.",
+	  "SugestaoId": "8"
+	},
+	{
+	  "Texto": "Conflitos na cracolândia se mantêm ao mesmo nível do ano passado, enquanto mais mulheres são assassinadas por seus parceiros.",
+	  "SugestaoId": "9"
+	},
+	{
+	  "Texto": "O que precisamos é de mais postes nas ruas mais periféricas, não luzinhas coloridas! Moradores indignados por luzes com novas cores nos seus bairros",
+	  "SugestaoId": "17"
+	}
   ],
   "Configuracoes": {
-    "CriminalidadeInicial": 70,
-    "PopularidadeInicial": 50,
-    "DinheiroInicial": 100,
-    "TempoTransicao": 2,
-    "LimiteDias": 7,
-    "CriminalidadeVitoriaAlta": 30,
-    "CriminalidadeVitoriaModerada": 2,
-    "PopularidadeVitoriaAlta": 50,
-    "PopularidadeVitoriaModerada": 60,
-    "InclinacaoNeutro": 0,
-    "TextoVitoriaModerada": "Parabéns! A criminalidade diminuiu!",
-    "TextoVitoriaAlta": "Parabéns você tornou São Paulo um lugar mais seguro de se viver!",
-    "TextoDerrota": "Você não conseguiu, a criminalidade de São Paulo aumentou.",
-    "TextoDerrotaDinheiro": "Você faliu a cidade!",
-    "TextoNeutro": "São Paulo sobreviveu."
+	"CriminalidadeInicial": 70,
+	"PopularidadeInicial": 50,
+	"DinheiroInicial": 100,
+	"TempoTransicao": 2,
+	"LimiteDias": 7,
+	"CriminalidadeVitoriaAlta": 30,
+	"CriminalidadeVitoriaModerada": 2,
+	"PopularidadeVitoriaAlta": 50,
+	"PopularidadeVitoriaModerada": 60,
+	"InclinacaoNeutro": 0,
+	"TextoVitoriaModerada": "Parabéns! A criminalidade diminuiu!",
+	"TextoVitoriaAlta": "Parabéns você tornou São Paulo um lugar mais seguro de se viver!",
+	"TextoDerrota": "Você não conseguiu, a criminalidade de São Paulo aumentou.",
+	"TextoDerrotaDinheiro": "Você faliu a cidade!",
+	"TextoNeutro": "São Paulo sobreviveu."
   }
 }

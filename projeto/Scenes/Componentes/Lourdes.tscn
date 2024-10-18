@@ -1,18 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2en35wgf36dm"]
+[gd_scene load_steps=19 format=3 uid="uid://b2en35wgf36dm"]
 
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_qko8e"]
 [ext_resource type="Texture2D" uid="uid://de3laniybw073" path="res://Assets/Imagens/lurdes_neutro.png" id="2_xq3kg"]
+[ext_resource type="LabelSettings" uid="uid://hypk0dqfvj8w" path="res://Scenes/Componentes/TextoBalaoSettings.tres" id="3_l1ns2"]
 [ext_resource type="Texture2D" uid="uid://dkkg7r2ygm26t" path="res://Assets/Imagens/lurdes_sim.png" id="3_n8yps"]
 [ext_resource type="Texture2D" uid="uid://bqh7skrugea8w" path="res://Assets/Imagens/lurdes_nao.png" id="4_820i1"]
 [ext_resource type="Texture2D" uid="uid://cwrt5n1v708tu" path="res://Assets/Imagens/lurdes_proposta.svg" id="5_1f2ds"]
 [ext_resource type="Texture2D" uid="uid://dfborj0um5c6e" path="res://Assets/Imagens/douces_cifra.svg" id="5_7u860"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_kg6qv"]
 [ext_resource type="Texture2D" uid="uid://np8f8kwwyscp" path="res://Assets/Imagens/lurdes_nome.svg" id="6_su48b"]
-[ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="8_0c5g2"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
-font = ExtResource("6_kg6qv")
-font_size = 53
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jxtn"]
 animations = [{
@@ -160,7 +155,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_gkias"]
 resource_name = "sair"
-length = 0.5
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -168,7 +163,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(375, 0)]
@@ -183,6 +178,23 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_lg1aq"]
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_7juhn"]
+resource_name = "rotacao"
 length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -193,23 +205,6 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_7juhn"]
-resource_name = "rotacao"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
@@ -247,23 +242,19 @@ stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
 layout_mode = 0
-offset_left = 28.3725
-offset_top = 22.9493
-offset_right = 561.372
-offset_bottom = 328.949
-scale = Vector2(0.961223, 0.961223)
-label_settings = SubResource("LabelSettings_hnq51")
+offset_left = 27.0
+offset_top = 22.0
+offset_right = 537.0
+offset_bottom = 323.0
+label_settings = ExtResource("3_l1ns2")
 autowrap_mode = 3
-script = ExtResource("8_0c5g2")
-Interval = 0.02
-Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
 layout_mode = 0
-offset_left = 48.5855
-offset_top = -47.2015
-offset_right = 339.586
-offset_bottom = 7.79847
+offset_left = 49.0
+offset_top = -70.0
+offset_right = 505.0
+offset_bottom = 18.0
 scale = Vector2(0.678843, 0.678843)
 
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
@@ -303,7 +294,6 @@ stretch_mode = 4
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(375, 0)
-rotation = 0.000344736
 sprite_frames = SubResource("SpriteFrames_8jxtn")
 speed_scale = 0.0
 

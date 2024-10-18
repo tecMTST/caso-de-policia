@@ -10,12 +10,17 @@ enum Estados {
 	EsperarEscolha,
 	EsperarDia,
 	EsperarNoticia,
-	FimDeTurno
+	FimDeTurno,
+	FimDeJogo
 }
 enum Turnos {
 	Manha,
 	Tarde
 }
+
+const textoPergunta : String = "E aí prefeito?\r\nQuais sao suas propostas?"
+const textoTransicao : String = "O que rolou…"
+const tempoMovimento: float = 0.2
 
 var estado : Estados = Estados.EsperarAbertura
 var gameData : GameData
@@ -54,9 +59,13 @@ var titulosNoticia : Array[String] = ["res://Assets/Imagens/provincia.png", "res
 @onready var abertura: Control = $Base/Abertura
 @onready var topo: Control = $Base/Topo
 @onready var texto_pergunta: Label = $Base/Topo/BoxTopo/TextoPergunta
+@onready var animation_botao_noticia: AnimationPlayer = $Base/Noticias/TextureNoticia/Control/AnimationBotaoNoticia
+@onready var animation_botao_abertura: AnimationPlayer = $Base/Abertura/AnimationBotaoAbertura
 
 
 func _ready() -> void:
+	AudioPlayer.Iniciar()
+	AudioPlayer.TocarBackground()
 	abertura.modulate.a = 0
 	create_tween().tween_property(abertura, "modulate:a", 1, 0.5)
 	gameData = GameDataLoader.LoadGameData()
@@ -69,6 +78,8 @@ func _ready() -> void:
 	progress_crime.value = criminalidade
 	progress_dinheiro.value = dinheiro
 	progress_popularidade.value = popularidade
+	animation_botao_noticia.play("botao")
+	animation_botao_abertura.play("botao")
 
 func _process(delta: float) -> void:
 	match estado:
@@ -92,6 +103,8 @@ func _process(delta: float) -> void:
 			pass
 		Estados.FimDeTurno:			
 			FinalizarTurno()
+		Estados.FimDeJogo:
+			pass
 	
 func ProcessarTempoAbertura(delta : float):
 	timerAbertura -= delta
@@ -99,21 +112,25 @@ func ProcessarTempoAbertura(delta : float):
 		estado = Estados.AnimarDia
 
 func ProcessarAnimarDia():
+	AudioPlayer.TocarForeground()
 	estado = Estados.EsperarAnimarDia
 	create_tween().tween_property(abertura, "modulate:a", 0, 0.8)
 	await get_tree().create_timer(0.8).timeout
-	create_tween().tween_property(topo, "modulate:a", 1, 0.5)
-	create_tween().tween_property(topo, "position:y", 35, 1)
-	await get_tree().create_timer(1).timeout
+	create_tween().tween_property(topo, "modulate:a", 1, tempoMovimento)
+	create_tween().tween_property(topo, "position:y", 40, tempoMovimento)
+	await get_tree().create_timer(tempoMovimento).timeout
+	create_tween().tween_property(texto_turno, "modulate:a", 1, tempoMovimento)
 	estado = Estados.DefinirSugestao
 
 func ProcessarMudarTarde():	
 	estado = Estados.EsperarDia
-	turno = Turnos.Tarde
+	texto_turno.text = "Tarde"	
 	douces.EsconderTexto()
 	lourdes.EsconderTexto()	
 	background.TransicaoTarde(popuUp, popuDown, crimeUp, custoUp)
 	background.DefinirPredios(inclinacao)
+	texto_pergunta.text = textoTransicao
+	create_tween().tween_property(texto_pergunta, "modulate:a", 1, tempoMovimento)
 	AnimarBarras()
 
 func ProcessarDefinirSugestao():
@@ -127,7 +144,8 @@ func ProcessarDefinirSugestao():
 	sugestoesUsadas.append(sugestaoB.Id)	
 	douces.DefinirTexto(sugestaoA.Texto, sugestaoA.Custo)
 	lourdes.DefinirTexto(sugestaoB.Texto, sugestaoB.Custo)
-	create_tween().tween_property(texto_pergunta, "modulate:a", 1, 0.5)
+	texto_pergunta.text = textoPergunta
+	create_tween().tween_property(texto_pergunta, "modulate:a", 1, tempoMovimento)
 	estado = Estados.EsperarEscolha
 	
 func ProcessarMostrarNoticia():
@@ -145,17 +163,18 @@ func ProcessarMostrarNoticia():
 func FecharNoticia():
 	create_tween().tween_property(texture_noticia, "modulate:a", 0, 0.5)
 	background.TransicaoManha()	
+	create_tween().tween_property(texto_pergunta, "modulate:a", 0, 0.3)
 	await get_tree().create_timer(tempoEspera).timeout
 	estado = Estados.FimDeTurno
 	
-func FinalizarTurno():
+func FinalizarTurno():	
 	timerEspera = tempoEspera
 	dia += 1	
 	estado = Estados.DefinirSugestao
-	turno = Turnos.Manha
+	texto_turno.text = "Manhã"
 	DefinirJogo()
 
-func SelecionarSugestao(sugestao : Sugestao):
+func SelecionarSugestao(sugestao : Sugestao):	
 	create_tween().tween_property(texto_pergunta, "modulate:a", 0, 0.5)
 	ultimaSugestaoId  = sugestao.Id
 	dinheiro -= sugestao.Custo
@@ -174,11 +193,7 @@ func DefinirJogo():
 	if dia < 10:
 		texto_dia.text = "Dia 0" + str(dia)
 	else:
-		texto_dia.text = "Dia " + str(dia)
-	if turno == Turnos.Manha:
-		texto_turno.text = "Manhã"
-	else:
-		texto_turno.text = "Tarde"	
+		texto_dia.text = "Dia " + str(dia)	
 		
 	if dinheiro <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
 		FinalizarJogo()
@@ -189,11 +204,20 @@ func AnimarBarras():
 	create_tween().tween_property(progress_popularidade, "value", popularidade, 0.5)
 	
 func FinalizarJogo():
+	estado = Estados.FimDeJogo
 	EstadoGlobal.Criminalidade = criminalidade
 	EstadoGlobal.Popularidade = popularidade
 	EstadoGlobal.Dinheiro = dinheiro
 	EstadoGlobal.Inclinacao = inclinacao
-	EstadoGlobal.GameData = gameData
+	EstadoGlobal.GameData = gameData	
+	create_tween().tween_property(progress_crime, "modulate:a", 0, 0.5)
+	create_tween().tween_property(progress_crime, "modulate:a", 0, 0.5)
+	create_tween().tween_property(progress_crime, "modulate:a", 0, 0.5)
+	create_tween().tween_property(topo, "modulate:a", 0, 0.5)
+	create_tween().tween_property(texture_noticia, "modulate:a", 0, 0.5)
+	create_tween().tween_property(douces, "modulate:a", 0, 0.5)
+	create_tween().tween_property(lourdes, "modulate:a", 0, 0.5)
+	await get_tree().create_timer(0.5).timeout	
 	SceneManager.change_to(load("res://Scenes/Victory/Victory.tscn"))
 
 func _on_background_finalizado() -> void:	
@@ -214,10 +238,12 @@ func _on_lourdes_selecionar() -> void:
 
 func _on_pause_pressed() -> void:
 	pause_menu.visible = true
+	AudioPlayer.MutarForeground()
 	get_tree().paused = true
 
 func _on_pause_menu_resumed() -> void:
 	pause_menu.visible = false
+	AudioPlayer.TocarForeground()
 	get_tree().paused = false
 
 func _on_fechar_noticia_pressed() -> void:

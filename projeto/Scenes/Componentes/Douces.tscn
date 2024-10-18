@@ -1,18 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnvrhukyxun15"]
+[gd_scene load_steps=19 format=3 uid="uid://cnvrhukyxun15"]
 
 [ext_resource type="Texture2D" uid="uid://gicrwp65p0dd" path="res://Assets/Imagens/douces_neutro.png" id="1_iexl0"]
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_j6djn"]
 [ext_resource type="Texture2D" uid="uid://clxarrcklphir" path="res://Assets/Imagens/docues_sim.png" id="2_yjhpy"]
 [ext_resource type="Texture2D" uid="uid://dfqcfbixq4ovc" path="res://Assets/Imagens/douces_nao.png" id="3_8j5bu"]
+[ext_resource type="LabelSettings" uid="uid://hypk0dqfvj8w" path="res://Scenes/Componentes/TextoBalaoSettings.tres" id="3_qs0tq"]
 [ext_resource type="Texture2D" uid="uid://c1fu1ad3ngfa5" path="res://Assets/Imagens/douces_proposta.svg" id="4_4qcex"]
 [ext_resource type="Texture2D" uid="uid://dwrwu2k3fnqr5" path="res://Assets/Imagens/douces_nome.svg" id="5_4jo5y"]
 [ext_resource type="Texture2D" uid="uid://cw6hg6manegy0" path="res://Assets/Imagens/lurdes_cifra.svg" id="5_66wu4"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="6_dp6b4"]
-[ext_resource type="Script" path="res://addons/TimedLabel/timed_label.gd" id="7_yjxv3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hnq51"]
-font = ExtResource("6_dp6b4")
-font_size = 53
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xo644"]
 animations = [{
@@ -160,7 +155,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_n4fi1"]
 resource_name = "sair"
-length = 0.5
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -168,7 +163,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-375, 0)]
@@ -183,6 +178,23 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_xii2u"]
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PivotNome:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_b57pl"]
+resource_name = "rotacao"
 length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -193,23 +205,6 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_b57pl"]
-resource_name = "rotacao"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
@@ -247,23 +242,19 @@ stretch_mode = 4
 
 [node name="Texto" type="Label" parent="Balao"]
 layout_mode = 0
-offset_left = 112.164
-offset_top = 22.8906
-offset_right = 645.164
-offset_bottom = 328.891
-scale = Vector2(0.979567, 0.979567)
-label_settings = SubResource("LabelSettings_hnq51")
+offset_left = 113.0
+offset_top = 19.0
+offset_right = 635.0
+offset_bottom = 327.0
+label_settings = ExtResource("3_qs0tq")
 autowrap_mode = 3
-script = ExtResource("7_yjxv3")
-Interval = 0.02
-Interval_Variation = 0.0
 
 [node name="Custo" type="HBoxContainer" parent="Balao"]
 layout_mode = 0
-offset_left = 391.429
-offset_top = -48.3789
-offset_right = 682.429
-offset_bottom = 6.62114
+offset_left = 292.0
+offset_top = -69.0
+offset_right = 746.0
+offset_bottom = 12.0
 scale = Vector2(0.76939, 0.76939)
 alignment = 2
 

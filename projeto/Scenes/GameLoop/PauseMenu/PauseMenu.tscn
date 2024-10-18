@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc8qq8nuav8ol"]
+[gd_scene load_steps=12 format=3 uid="uid://cc8qq8nuav8ol"]
 
 [ext_resource type="Script" path="res://Scenes/GameLoop/PauseMenu/PauseMenu.gd" id="1_0jyjq"]
 [ext_resource type="Texture2D" uid="uid://lg6sjwjsp0p1" path="res://Assets/Imagens/menu_pause.svg" id="2_r1hy8"]
 [ext_resource type="FontFile" uid="uid://dvp2jquyd01n7" path="res://Assets/Fontes/MochiyPopOne-Regular.ttf" id="3_pb6r2"]
 [ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="4_6neoc"]
+[ext_resource type="Texture2D" uid="uid://cxy07yaefh37u" path="res://Assets/Imagens/Speaker_Icon.svg" id="5_iawcn"]
+[ext_resource type="Texture2D" uid="uid://cg8n2274vx8yu" path="res://Assets/Imagens/Mute_Icon.svg" id="6_djrsh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fm7tr"]
 font = ExtResource("3_pb6r2")
@@ -20,6 +22,9 @@ font_color = Color(0.886275, 0.921569, 0.74902, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3hur"]
 size = Vector2(520, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3herd"]
+radius = 25.0
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -82,7 +87,7 @@ grow_vertical = 2
 pivot_offset = Vector2(125, 125)
 
 [node name="VoltarAojogo" type="TouchScreenButton" parent="Botoes"]
-position = Vector2(121, 178)
+position = Vector2(121, 153)
 shape = SubResource("RectangleShape2D_y3otv")
 
 [node name="Label" type="Label" parent="Botoes/VoltarAojogo"]
@@ -103,7 +108,7 @@ label_settings = SubResource("LabelSettings_jjrnx")
 horizontal_alignment = 1
 
 [node name="VoltarAoMenu" type="TouchScreenButton" parent="Botoes"]
-position = Vector2(121, 280)
+position = Vector2(121, 322)
 shape = SubResource("RectangleShape2D_w3hur")
 
 [node name="Label" type="Label" parent="Botoes/VoltarAoMenu"]
@@ -123,5 +128,38 @@ text = "Voltar ao menu principal"
 label_settings = SubResource("LabelSettings_jjrnx")
 horizontal_alignment = 1
 
+[node name="Audio" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 316.0
+offset_right = 224.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.97328, 2.97328)
+
+[node name="AudioButton" type="TouchScreenButton" parent="Audio"]
+position = Vector2(17.8255, 21.1888)
+shape = SubResource("CircleShape2D_3herd")
+
+[node name="AudioOn" type="Sprite2D" parent="Audio"]
+self_modulate = Color(0.886275, 0.921569, 0.74902, 1)
+position = Vector2(18.8344, 20.8524)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_iawcn")
+
+[node name="AudioOff" type="Sprite2D" parent="Audio"]
+visible = false
+self_modulate = Color(0.886275, 0.921569, 0.74902, 1)
+position = Vector2(18.8344, 20.8524)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("6_djrsh")
+
 [connection signal="pressed" from="Botoes/VoltarAojogo" to="." method="_on_voltar_aojogo_pressed"]
 [connection signal="pressed" from="Botoes/VoltarAoMenu" to="." method="_on_voltar_ao_menu_pressed"]
+[connection signal="pressed" from="Audio/AudioButton" to="." method="_on_audio_button_pressed"]

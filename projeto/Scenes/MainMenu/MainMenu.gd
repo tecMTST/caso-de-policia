@@ -7,6 +7,8 @@ extends Control
 var pronto : bool = false
 
 func _ready() -> void:
+	AudioPlayer.Iniciar()
+	AudioPlayer.TocarBackground()
 	logo.modulate.a = 0
 	botoes.modulate.a = 0
 	create_tween().tween_property(logo, "modulate:a", 1, 1)
@@ -20,4 +22,7 @@ func _on_sobre_cta_pressed():
 
 func _on_iniciar_pressed() -> void:
 	if pronto:
+		create_tween().tween_property(logo, "modulate:a", 0, 0.5)
+		create_tween().tween_property(botoes, "modulate:a", 0, 0.5)
+		await get_tree().create_timer(0.5).timeout
 		SceneManager.change_to(load("res://Scenes/GameLoop/GameLoop.tscn"))	

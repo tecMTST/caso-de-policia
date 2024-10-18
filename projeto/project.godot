@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://Scripts/SceneManager.gd"
 EstadoGlobal="*res://Scripts/EstadoGlobal.gd"
+AudioPlayer="*res://Scripts/AudioPlayer.gd"
 
 [display]
 

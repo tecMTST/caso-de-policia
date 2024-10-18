@@ -1,34 +1,30 @@
 extends Node
 
-var background : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-var foreground : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+var audioStream : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 var Inicializado : bool = false
 
 func _ready() -> void:	
 	process_mode = ProcessMode.PROCESS_MODE_ALWAYS
-	background.stream = load("res://Assets/Audio/Caso de Polícia - Abertura.mp3")
-	foreground.stream = load("res://Assets/Audio/Caso de Polícia - Gameplay.mp3")
-	background.volume_db = -80
-	foreground.volume_db = -80
-	add_child(background)
-	add_child(foreground)
+	audioStream.stream = load("res://Assets/Audio/AudioSincronizado.tres")
+	(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(0, -80)
+	(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(1, -80)	
+	add_child(audioStream)
 
 func Iniciar():
 	if not Inicializado:
-		background.play()
-		foreground.play()
+		audioStream.play()
 		Inicializado = true
 
 func TocarBackground():
 	if EstadoGlobal.Audio:
-		create_tween().tween_property(background, "volume_db", 0, 0.2)
+		(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(0, 0)
 	
 func TocarForeground():
 	if EstadoGlobal.Audio:	
-		create_tween().tween_property(foreground, "volume_db", 0, 0.2)
+		(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(1, 0)
 		
 func MutarBackground():
-	create_tween().tween_property(background, "volume_db", -80, 0.2)
+	(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(0, -80)	
 	
 func MutarForeground():
-	create_tween().tween_property(foreground, "volume_db", -80, 0.2)
+	(audioStream.stream as AudioStreamSynchronized).set_sync_stream_volume(1, -80)

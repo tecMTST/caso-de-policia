@@ -249,7 +249,7 @@ offset_bottom = 327.0
 label_settings = ExtResource("3_qs0tq")
 autowrap_mode = 3
 
-[node name="Custo" type="HBoxContainer" parent="Balao"]
+[node name="Custo1" type="HBoxContainer" parent="Balao"]
 layout_mode = 0
 offset_left = 292.0
 offset_top = -69.0
@@ -258,39 +258,66 @@ offset_bottom = 12.0
 scale = Vector2(0.76939, 0.76939)
 alignment = 2
 
+[node name="Custo" type="Control" parent="Balao"]
+anchors_preset = 0
+offset_left = 310.0
+offset_top = -73.0
+offset_right = 613.0
+offset_bottom = -7.0
+
 [node name="Custo1" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
+offset_left = 269.0
+offset_top = 4.0
+offset_right = 297.0
+offset_bottom = 70.0
 texture = ExtResource("5_66wu4")
-expand_mode = 2
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Custo2" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
+offset_left = 236.895
+offset_top = 4.0
+offset_right = 264.895
+offset_bottom = 70.0
 texture = ExtResource("5_66wu4")
-expand_mode = 2
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Custo3" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
+offset_left = 204.791
+offset_top = 4.0
+offset_right = 232.791
+offset_bottom = 70.0
 texture = ExtResource("5_66wu4")
-expand_mode = 2
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Custo4" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
+offset_left = 172.686
+offset_top = 4.0
+offset_right = 200.686
+offset_bottom = 70.0
 texture = ExtResource("5_66wu4")
-expand_mode = 2
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Custo5" type="TextureRect" parent="Balao/Custo"]
 visible = false
 layout_mode = 2
+offset_left = 140.582
+offset_top = 4.0
+offset_right = 168.582
+offset_bottom = 70.0
 texture = ExtResource("5_66wu4")
-expand_mode = 2
+expand_mode = 5
 stretch_mode = 4
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="1_o4ahw"]
 [ext_resource type="PackedScene" uid="uid://cu1qimgoij27y" path="res://Scenes/Componentes/Background.tscn" id="2_jgn08"]
 [ext_resource type="Texture2D" uid="uid://cx0jnmp8jtpj1" path="res://Assets/Imagens/titulo.svg" id="3_yl8cl"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="4_74cex"]
+[ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="4_u3aui"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bx11i"]
-font = ExtResource("4_74cex")
+font = ExtResource("4_u3aui")
 font_size = 60
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
@@ -125,5 +125,15 @@ shape = SubResource("RectangleShape2D_11rh3")
 libraries = {
 "": SubResource("AnimationLibrary_ad48q")
 }
+
+[node name="BlackMask" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]

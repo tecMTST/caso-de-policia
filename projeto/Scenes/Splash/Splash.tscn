@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_suaw6"]
 shader = ExtResource("2_6iacg")
 shader_parameter/shine_color = Color(1, 1, 1, 0.54902)
-shader_parameter/shine_speed = 5.0
+shader_parameter/shine_speed = 2.0
 shader_parameter/shine_size = 0.01
 shader_parameter/enabled = 1
 
@@ -47,6 +47,16 @@ grow_vertical = 2
 texture = ExtResource("1_aikui")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="BlackMask" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nu4po")

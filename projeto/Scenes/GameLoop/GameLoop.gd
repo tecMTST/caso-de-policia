@@ -61,13 +61,17 @@ var titulosNoticia : Array[String] = ["res://Assets/Imagens/provincia.png", "res
 @onready var texto_pergunta: Label = $Base/Topo/BoxTopo/TextoPergunta
 @onready var animation_botao_noticia: AnimationPlayer = $Base/Noticias/TextureNoticia/Control/AnimationBotaoNoticia
 @onready var animation_botao_abertura: AnimationPlayer = $Base/Abertura/AnimationBotaoAbertura
+@onready var rodape: Control = $Base/Rodape
+@onready var pause_area: Control = $Base/PauseArea
 
 
 func _ready() -> void:
 	AudioPlayer.Iniciar()
 	AudioPlayer.TocarBackground()
 	abertura.modulate.a = 0
-	create_tween().tween_property(abertura, "modulate:a", 1, 0.5)
+	create_tween().tween_property(abertura, "modulate:a", 1, 1.5)
+	create_tween().tween_property(rodape, "modulate:a", 1, 1.5)
+	create_tween().tween_property(pause_area, "modulate:a", 1, 1.5)	
 	gameData = GameDataLoader.LoadGameData()
 	criminalidade = gameData.Configuracoes.CriminalidadeInicial
 	popularidade = gameData.Configuracoes.PopularidadeInicial

@@ -1,8 +1,7 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://hypk0dqfvj8w"]
 
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="1_rj0cn"]
+[ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="1_bi1ra"]
 
 [resource]
-font = ExtResource("1_rj0cn")
-font_size = 55
-outline_size = 2
+font = ExtResource("1_bi1ra")
+font_size = 45

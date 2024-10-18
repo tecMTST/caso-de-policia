@@ -1,15 +1,15 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://b6btopaperbt1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8161h"]
-bg_color = Color(0.6, 0.6, 0.6, 0.0901961)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb5op"]
-bg_color = Color(0.54902, 0.745098, 0.698039, 1)
+bg_color = Color(0.94902, 0.917647, 0.745098, 1)
 border_width_left = 5
-border_width_top = 5
+border_width_top = 20
 border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 0.313726)
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 0)
 
 [resource]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_8161h")

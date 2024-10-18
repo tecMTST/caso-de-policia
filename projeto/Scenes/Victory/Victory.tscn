@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://Scenes/Victory/Victory.gd" id="1_tl113"]
 [ext_resource type="PackedScene" uid="uid://cu1qimgoij27y" path="res://Scenes/Componentes/Background.tscn" id="2_8qlsy"]
-[ext_resource type="FontFile" uid="uid://s5nybkajqilv" path="res://Assets/Fontes/AmaticSC-Bold.ttf" id="3_ohmbk"]
+[ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="3_mjknu"]
 [ext_resource type="Texture2D" uid="uid://clxarrcklphir" path="res://Assets/Imagens/docues_sim.png" id="4_5plxr"]
 [ext_resource type="Texture2D" uid="uid://dkkg7r2ygm26t" path="res://Assets/Imagens/lurdes_sim.png" id="5_m7qoi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lowf4"]
-font = ExtResource("3_ohmbk")
+font = ExtResource("3_mjknu")
 font_size = 82
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x8kap"]
-font = ExtResource("3_ohmbk")
-font_size = 60
+font = ExtResource("3_mjknu")
+font_size = 52
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ajih"]
-size = Vector2(450, 150)
+size = Vector2(679, 245)
 
 [sub_resource type="Animation" id="Animation_gihk4"]
 length = 0.001
@@ -140,10 +140,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -52.5
-offset_right = 98.0
-offset_bottom = 52.5
+offset_left = -357.0
+offset_top = -83.0
+offset_right = 357.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(98.1576, 0.103577)

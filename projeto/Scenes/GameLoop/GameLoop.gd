@@ -18,7 +18,7 @@ enum Turnos {
 	Tarde
 }
 
-const textoPergunta : String = "E aí prefeito?\r\nQuais sao suas propostas?"
+const textoPergunta : String = "E aí prefeito?\r\nQuais são suas propostas?"
 const textoTransicao : String = "O que rolou…"
 const tempoMovimento: float = 0.2
 
@@ -178,10 +178,12 @@ func SelecionarSugestao(sugestao : Sugestao):
 	create_tween().tween_property(texto_pergunta, "modulate:a", 0, 0.5)
 	ultimaSugestaoId  = sugestao.Id
 	dinheiro -= sugestao.Custo
-	if popularidade > 0 and popularidade < 100:
-		popularidade += sugestao.Popularidade
-	if criminalidade > 0 and criminalidade < 100:
-		criminalidade += sugestao.Criminalidade
+	dinheiro = clamp(dinheiro, 0, 100)
+	popularidade += sugestao.Popularidade
+	popularidade = clamp(popularidade, 0, 100)
+	criminalidade += sugestao.Criminalidade
+	criminalidade = clamp(criminalidade, 0, 100)
+	
 	popuUp = sugestao.Popularidade > 0
 	popuDown = sugestao.Popularidade < 0
 	crimeUp = sugestao.Criminalidade > 0

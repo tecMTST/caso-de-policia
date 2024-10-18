@@ -9,6 +9,7 @@ var pronto : bool = false
 func _ready() -> void:
 	AudioPlayer.Iniciar()
 	AudioPlayer.TocarBackground()
+	AudioPlayer.MutarForeground()
 	logo.modulate.a = 0
 	botoes.modulate.a = 0
 	create_tween().tween_property(logo, "modulate:a", 1, 1)

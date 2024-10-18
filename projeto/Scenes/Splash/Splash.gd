@@ -5,6 +5,7 @@ extends Control
 
 func _ready():
 	sfx_splash.play()
+	await get_tree().create_timer(0.5).timeout
 	logo_nt.material.set_shader_parameter("enabled", 1)
 	await get_tree().create_timer(0.5).timeout
 	logo_nt.material.set_shader_parameter("enabled", 0)

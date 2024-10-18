@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu1qimgoij27y"]
+[gd_scene load_steps=8 format=3 uid="uid://cu1qimgoij27y"]
 
 [ext_resource type="Script" path="res://Scenes/Componentes/background.gd" id="1_7hkh1"]
 [ext_resource type="Texture2D" uid="uid://cqjnnfifuguv1" path="res://Assets/Imagens/aprovacao_balao.svg" id="2_stft3"]
@@ -7,25 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ph408a8j3red" path="res://Assets/Imagens/orcamento_balao.svg" id="5_05bcl"]
 [ext_resource type="Texture2D" uid="uid://bddkaauf18lxi" path="res://Assets/Imagens/skylineMask.svg" id="6_t272c"]
 
-[sub_resource type="Curve" id="Curve_asnpt"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.486667, 1), 0.0, 0.0, 0, 0, Vector2(0.993333, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_566g4"]
-curve = SubResource("Curve_asnpt")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nj30k"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(500, 1, 1)
-direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 75.27
-initial_velocity_max = 437.63
-gravity = Vector3(0, -200, 0)
-scale_min = 0.2
-scale_max = 0.4
-alpha_curve = SubResource("CurveTexture_566g4")
+[sub_resource type="Gradient" id="Gradient_n14ie"]
+offsets = PackedFloat32Array(0.676157, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Background" type="Control"]
 layout_mode = 3
@@ -45,33 +29,53 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.886275, 0.921569, 0.74902, 1)
 
-[node name="PopularidadeUp" type="GPUParticles2D" parent="."]
-position = Vector2(526, 1709)
+[node name="PopularidadeUp" type="CPUParticles2D" parent="."]
+position = Vector2(544, 1754)
 emitting = false
 amount = 5
-process_material = SubResource("ParticleProcessMaterial_nj30k")
 texture = ExtResource("2_stft3")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 50)
+gravity = Vector2(0, -980)
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_n14ie")
 
-[node name="PopularidadeDown" type="GPUParticles2D" parent="."]
-position = Vector2(526, 1709)
+[node name="PopularidadeDown" type="CPUParticles2D" parent="."]
+position = Vector2(544, 1754)
 emitting = false
 amount = 5
-process_material = SubResource("ParticleProcessMaterial_nj30k")
 texture = ExtResource("3_kfo7p")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 50)
+gravity = Vector2(0, -980)
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_n14ie")
 
-[node name="Criminalidade" type="GPUParticles2D" parent="."]
-position = Vector2(526, 1709)
+[node name="Criminalidade" type="CPUParticles2D" parent="."]
+position = Vector2(544, 1754)
 emitting = false
 amount = 5
-process_material = SubResource("ParticleProcessMaterial_nj30k")
 texture = ExtResource("4_wi8mn")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 50)
+gravity = Vector2(0, -980)
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_n14ie")
 
-[node name="Custo" type="GPUParticles2D" parent="."]
-position = Vector2(526, 1709)
+[node name="Custo" type="CPUParticles2D" parent="."]
+position = Vector2(544, 1754)
 emitting = false
 amount = 5
-process_material = SubResource("ParticleProcessMaterial_nj30k")
 texture = ExtResource("5_05bcl")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 50)
+gravity = Vector2(0, -980)
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_n14ie")
 
 [node name="Predios" type="TextureRect" parent="."]
 modulate = Color(0.360784, 0.298039, 0.321569, 1)

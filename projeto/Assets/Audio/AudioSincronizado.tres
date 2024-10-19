@@ -1,11 +1,11 @@
 [gd_resource type="AudioStreamSynchronized" load_steps=3 format=3 uid="uid://60awuvfy4r4b"]
 
-[ext_resource type="AudioStream" uid="uid://b65ldxd6l5yjg" path="res://Assets/Audio/Caso de Polícia - Abertura.mp3" id="1_uqi8r"]
-[ext_resource type="AudioStream" uid="uid://xqd5ka5xines" path="res://Assets/Audio/Caso de Polícia - Gameplay.mp3" id="2_d21yv"]
+[ext_resource type="AudioStream" uid="uid://d1f77js5k6hee" path="res://Assets/Audio/bgm-abertura.mp3" id="1_7a3iw"]
+[ext_resource type="AudioStream" uid="uid://dftqfb7r15deo" path="res://Assets/Audio/bgm-gameplay.mp3" id="2_v6m2c"]
 
 [resource]
 stream_count = 2
-stream_0/stream = ExtResource("1_uqi8r")
+stream_0/stream = ExtResource("1_7a3iw")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("2_d21yv")
+stream_1/stream = ExtResource("2_v6m2c")
 stream_1/volume = 0.0

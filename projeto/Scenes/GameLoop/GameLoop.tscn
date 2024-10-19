@@ -213,11 +213,11 @@ anchor_bottom = 0.5
 offset_left = 123.0
 offset_top = -150.0
 offset_right = -11.0
-offset_bottom = 142.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.831326, 1.0512)
-text = "“Agora nos sentimos muito mais seguros sabendo que todo dia terá uma viatura vigiando a entrada e saída de nossos filhos” comenta morador."
+text = "O que precisamos é de mais postes nas ruas mais periféricas, não luzinhas coloridas! Moradores indignados por luzes com novas cores nos seus bairros"
 label_settings = SubResource("LabelSettings_6ib3x")
 autowrap_mode = 2
 

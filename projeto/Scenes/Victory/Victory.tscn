@@ -11,9 +11,10 @@ font = ExtResource("3_mjknu")
 font_size = 82
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_x8kap"]
+[sub_resource type="LabelSettings" id="LabelSettings_wsmqf"]
+line_spacing = 10.0
 font = ExtResource("3_mjknu")
-font_size = 52
+font_size = 45
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ajih"]
@@ -133,23 +134,15 @@ grow_vertical = 2
 scale = Vector2(1.55, 1)
 pivot_offset = Vector2(20, 0)
 
-[node name="TextoIniciar" type="Label" parent="Base/Botoes"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -357.0
-offset_top = -83.0
-offset_right = 357.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(98.1576, 0.103577)
+[node name="Label" type="Label" parent="Base/Botoes"]
+layout_mode = 0
+offset_left = -316.774
+offset_top = -36.0
+offset_right = 354.226
+offset_bottom = 157.0
 text = "Pressione/Clique
 Para Voltar para o menu"
-label_settings = SubResource("LabelSettings_x8kap")
+label_settings = SubResource("LabelSettings_wsmqf")
 horizontal_alignment = 1
 
 [node name="Iniciar" type="TouchScreenButton" parent="Base/Botoes"]

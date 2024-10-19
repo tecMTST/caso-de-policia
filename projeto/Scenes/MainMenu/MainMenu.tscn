@@ -11,7 +11,7 @@ font_size = 60
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11rh3"]
-size = Vector2(300, 150)
+size = Vector2(450, 227)
 
 [sub_resource type="Animation" id="Animation_nqrsl"]
 length = 0.001

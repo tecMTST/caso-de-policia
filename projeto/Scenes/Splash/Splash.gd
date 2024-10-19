@@ -5,7 +5,10 @@ extends Control
 @onready var black_mask: ColorRect = $BlackMask
 
 func _ready():
+	grab_click_focus()
 	sfx_splash.play()
+	while not sfx_splash.playing:
+		pass
 	await get_tree().create_timer(0.5).timeout
 	logo_nt.material.set_shader_parameter("enabled", 1)
 	await get_tree().create_timer(0.7).timeout

@@ -227,6 +227,24 @@ script = ExtResource("1_qko8e")
 ImagemBalao = "res://Assets/Imagens/lurdes_proposta.svg"
 ImagemBalaoPressed = "res://Assets/Imagens/lurdes_proposta_pressed.svg"
 
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(375, 0)
+sprite_frames = SubResource("SpriteFrames_8jxtn")
+speed_scale = 0.0
+
+[node name="PivotNome" type="Node2D" parent="Sprite"]
+
+[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -79.8049
+offset_top = -231.385
+offset_right = 298.195
+offset_bottom = 13.6147
+scale = Vector2(1.33087, 1.33087)
+texture = ExtResource("6_su48b")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -309,24 +327,6 @@ offset_right = 167.168
 offset_bottom = 68.0
 texture = ExtResource("5_7u860")
 expand_mode = 5
-stretch_mode = 4
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(375, 0)
-sprite_frames = SubResource("SpriteFrames_8jxtn")
-speed_scale = 0.0
-
-[node name="PivotNome" type="Node2D" parent="Sprite"]
-
-[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -79.8049
-offset_top = -231.385
-offset_right = 298.195
-offset_bottom = 13.6147
-scale = Vector2(1.33087, 1.33087)
-texture = ExtResource("6_su48b")
-expand_mode = 2
 stretch_mode = 4
 
 [node name="Botao" type="TouchScreenButton" parent="."]

@@ -79,6 +79,7 @@ func DefinirExpressao(expressao: Expressoes):
 			create_tween().tween_property(sprite,"scale", Vector2(1.2, 1.2), tempoMovimento)
 			create_tween().tween_property(balao, "scale", Vector2(1.2, 1.2), tempoMovimento)
 		Expressoes.Nao:
+			Ativo = false
 			sprite.frame = 2
 			create_tween().tween_property(sprite, "scale", Vector2(0.8, 0.8), tempoMovimento)
 			create_tween().tween_property(balao, "scale", Vector2(0.8, 0.8), tempoMovimento)

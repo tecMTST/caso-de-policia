@@ -19,7 +19,7 @@ enum Turnos {
 	Tarde
 }
 
-const textoPergunta : String = "E aí prefeito?\r\nQuais são suas propostas?"
+const textoPergunta : String = "Quais são suas propostas\r\nconselheiros?"
 const textoTransicao : String = "O que rolou…"
 const tempoMovimento: float = 0.2
 
@@ -200,9 +200,9 @@ func SelecionarSugestao(sugestao : Sugestao):
 	
 func DefinirJogo():
 	if dia < 10:
-		texto_dia.text = "Dia 0" + str(dia)
+		texto_dia.text = "Mês 0" + str(dia)
 	else:
-		texto_dia.text = "Dia " + str(dia)	
+		texto_dia.text = "Mês " + str(dia)	
 		
 	if dinheiro <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
 		FinalizarJogo()

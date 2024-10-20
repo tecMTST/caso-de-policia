@@ -270,7 +270,7 @@ grow_vertical = 2
 
 [node name="TextoDia" type="Label" parent="Base/Topo/BoxTopo"]
 layout_mode = 2
-text = "Dia 01
+text = "Mês 01
 "
 label_settings = SubResource("LabelSettings_c1n3d")
 horizontal_alignment = 1
@@ -425,7 +425,7 @@ text = "Infelizmente, em 2024, a cidade se
 encontra tomada pelo crime 
 organizado. Roubos, latrocínios, feminicídios e furtos de celulares estão em alta.
 
-Para tentar resolver estes problemas em apenas uma semana, você chamou seus dois conselheiros mais influentes: [b]Gustavo Douces e Reinaldo Lurdes.[/b]"
+Para tentar resolver estes problemas em alguns meses, você chamou seus dois conselheiros mais influentes: [b]Gustavo Douces e Reinaldo Lurdes.[/b]"
 
 [node name="TextoAberturaRodape" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1

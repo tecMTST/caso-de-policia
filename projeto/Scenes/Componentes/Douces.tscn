@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnvrhukyxun15"]
+[gd_scene load_steps=15 format=3 uid="uid://cnvrhukyxun15"]
 
 [ext_resource type="Texture2D" uid="uid://gicrwp65p0dd" path="res://Assets/Imagens/douces_neutro.png" id="1_iexl0"]
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_j6djn"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dfqcfbixq4ovc" path="res://Assets/Imagens/douces_nao.png" id="3_8j5bu"]
 [ext_resource type="LabelSettings" uid="uid://hypk0dqfvj8w" path="res://Scenes/Componentes/TextoBalaoSettings.tres" id="3_qs0tq"]
 [ext_resource type="Texture2D" uid="uid://c1fu1ad3ngfa5" path="res://Assets/Imagens/douces_proposta.svg" id="4_4qcex"]
-[ext_resource type="Texture2D" uid="uid://dwrwu2k3fnqr5" path="res://Assets/Imagens/douces_nome.svg" id="5_4jo5y"]
 [ext_resource type="Texture2D" uid="uid://cw6hg6manegy0" path="res://Assets/Imagens/lurdes_cifra.svg" id="5_66wu4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xo644"]
@@ -177,45 +176,6 @@ _data = {
 "sair": SubResource("Animation_n4fi1")
 }
 
-[sub_resource type="Animation" id="Animation_xii2u"]
-length = 15.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_b57pl"]
-resource_name = "rotacao"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pd3ft"]
-_data = {
-"RESET": SubResource("Animation_xii2u"),
-"rotacao": SubResource("Animation_b57pl")
-}
-
 [node name="Douces" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -232,19 +192,6 @@ position = Vector2(-375, 0)
 sprite_frames = SubResource("SpriteFrames_xo644")
 speed_scale = 0.0
 flip_h = true
-
-[node name="PivotNome" type="Node2D" parent="Sprite"]
-
-[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
-modulate = Color(1, 1, 1, 0)
-show_behind_parent = true
-offset_left = -219.0
-offset_top = -233.0
-offset_right = 159.0
-offset_bottom = 12.0
-texture = ExtResource("5_4jo5y")
-expand_mode = 2
-stretch_mode = 4
 
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -351,8 +298,3 @@ libraries = {
 "": SubResource("AnimationLibrary_ps08h")
 }
 speed_scale = 0.75
-
-[node name="AnimationNome" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pd3ft")
-}

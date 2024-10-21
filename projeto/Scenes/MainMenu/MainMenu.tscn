@@ -112,8 +112,8 @@ offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(98.1576, 0.103577)
-text = "Toque/Clique
-Para Iniciar"
+text = "Toque/clique
+para iniciar"
 label_settings = SubResource("LabelSettings_bx11i")
 horizontal_alignment = 1
 

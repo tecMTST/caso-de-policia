@@ -17,7 +17,6 @@ signal Selecionar
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var textoSugestao: Label = $Balao/Texto
 @onready var botao: TouchScreenButton = $Botao
-@onready var nome: TextureRect = $Sprite/PivotNome/Nome
 @onready var balao: TextureRect = $Balao
 @onready var custo_1: TextureRect = $Balao/Custo/Custo1
 @onready var custo_2: TextureRect = $Balao/Custo/Custo2
@@ -25,7 +24,6 @@ signal Selecionar
 @onready var custo_4: TextureRect = $Balao/Custo/Custo4
 @onready var custo_5: TextureRect = $Balao/Custo/Custo5
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var animation_nome: AnimationPlayer = $AnimationNome
 
 var Ativo = false
 @onready var spriteOriginaSize = sprite.scale
@@ -34,7 +32,6 @@ var Ativo = false
 func _ready() -> void:
 	balao.texture = load(ImagemBalao)
 	botao.connect("pressed", _on_botao_pressed)
-	animation_nome.play("rotacao")
 	
 func DefinirTexto(texto : String, custo: int):	
 	animation_player.play("entrar")
@@ -46,7 +43,6 @@ func DefinirTexto(texto : String, custo: int):
 	custo_4.visible = custo >= 20
 	custo_5.visible = custo >= 40
 	create_tween().tween_property(balao,"modulate:a", 1, tempoMovimento)
-	create_tween().tween_property(nome,"modulate:a", 1, tempoMovimento)	
 	textoSugestao.text = texto
 	Ativo = true
 	
@@ -61,7 +57,6 @@ func __limpar():
 
 func EsconderTexto():
 	create_tween().tween_property(balao,"modulate:a", 0, tempoMovimento)
-	create_tween().tween_property(nome,"modulate:a", 0, tempoMovimento)
 	await get_tree().create_timer(tempoMovimento).timeout
 	__limpar()
 	balao.texture = load(ImagemBalao)

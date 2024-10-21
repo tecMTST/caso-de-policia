@@ -398,7 +398,7 @@ theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
 text = "[center][b]Parabéns![/b]
-Você Foi eleito prefeito de São Paulo.[/center]"
+Você foi eleito prefeito de São Paulo.[/center]"
 scroll_active = false
 
 [node name="TextoAbertura" type="RichTextLabel" parent="Base/Abertura"]
@@ -425,7 +425,7 @@ text = "Infelizmente, em 2024, a cidade se
 encontra tomada pelo crime 
 organizado. Roubos, latrocínios, feminicídios e furtos de celulares estão em alta.
 
-Para tentar resolver estes problemas em alguns meses, você chamou seus dois conselheiros mais influentes: [b]Guilherme Boulos e Reinaldo Lurdes.[/b]"
+Para tentar resolver estes problemas em alguns meses, você chamou seus dois conselheiros mais influentes."
 
 [node name="TextoAberturaRodape" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1

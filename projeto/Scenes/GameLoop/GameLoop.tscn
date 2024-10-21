@@ -425,7 +425,7 @@ text = "Infelizmente, em 2024, a cidade se
 encontra tomada pelo crime 
 organizado. Roubos, latrocínios, feminicídios e furtos de celulares estão em alta.
 
-Para tentar resolver estes problemas em alguns meses, você chamou seus dois conselheiros mais influentes: [b]Gustavo Douces e Reinaldo Lurdes.[/b]"
+Para tentar resolver estes problemas em alguns meses, você chamou seus dois conselheiros mais influentes: [b]Guilherme Boulos e Reinaldo Lurdes.[/b]"
 
 [node name="TextoAberturaRodape" type="RichTextLabel" parent="Base/Abertura"]
 layout_mode = 1

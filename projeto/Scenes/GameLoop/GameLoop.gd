@@ -19,7 +19,7 @@ enum Turnos {
 	Tarde
 }
 
-const textoPergunta : String = "Quais são suas propostas\r\nconselheiros?"
+const textoPergunta : String = "Quais são suas propostas,\r\nconselheiros?"
 const textoTransicao : String = "O que rolou…"
 const tempoMovimento: float = 0.2
 

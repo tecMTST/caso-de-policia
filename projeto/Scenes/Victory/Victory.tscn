@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwdkxqwrm75nx"]
+[gd_scene load_steps=18 format=3 uid="uid://dwdkxqwrm75nx"]
 
 [ext_resource type="Script" path="res://Scenes/Victory/Victory.gd" id="1_tl113"]
 [ext_resource type="PackedScene" uid="uid://cu1qimgoij27y" path="res://Scenes/Componentes/Background.tscn" id="2_8qlsy"]
 [ext_resource type="FontFile" uid="uid://ck80p85vb258u" path="res://Assets/Fontes/ShantellSans-Regular.ttf" id="3_mjknu"]
+[ext_resource type="Texture2D" uid="uid://c1fu1ad3ngfa5" path="res://Assets/Imagens/douces_proposta.svg" id="4_0hrdp"]
 [ext_resource type="Texture2D" uid="uid://clxarrcklphir" path="res://Assets/Imagens/docues_sim.png" id="4_5plxr"]
 [ext_resource type="Texture2D" uid="uid://dkkg7r2ygm26t" path="res://Assets/Imagens/lurdes_sim.png" id="5_m7qoi"]
+[ext_resource type="Texture2D" uid="uid://cwrt5n1v708tu" path="res://Assets/Imagens/lurdes_proposta.svg" id="6_7e4l4"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_lowf4"]
+[sub_resource type="LabelSettings" id="LabelSettings_n2aqc"]
 font = ExtResource("3_mjknu")
 font_size = 82
 font_color = Color(0.360784, 0.294118, 0.317647, 1)
@@ -20,7 +22,11 @@ font_color = Color(0.360784, 0.294118, 0.317647, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ajih"]
 size = Vector2(679, 245)
 
-[sub_resource type="Animation" id="Animation_gihk4"]
+[sub_resource type="LabelSettings" id="LabelSettings_lowf4"]
+font = ExtResource("3_mjknu")
+font_size = 82
+
+[sub_resource type="Animation" id="Animation_2elwr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,7 +41,7 @@ tracks/0/keys = {
 "values": [Vector2(869, 258)]
 }
 
-[sub_resource type="Animation" id="Animation_7dopt"]
+[sub_resource type="Animation" id="Animation_4rvxx"]
 resource_name = "idle"
 length = 3.0
 loop_mode = 1
@@ -46,16 +52,16 @@ tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.46667, 3),
+"times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(869, 258), Vector2(869, 240), Vector2(869, 258)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkive"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxc4i"]
 _data = {
-"RESET": SubResource("Animation_gihk4"),
-"idle": SubResource("Animation_7dopt")
+"RESET": SubResource("Animation_2elwr"),
+"idle": SubResource("Animation_4rvxx")
 }
 
 [sub_resource type="Animation" id="Animation_52ife"]
@@ -114,7 +120,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Parabéns!
 Você Foi eleito prefeito de São Paulo."
-label_settings = SubResource("LabelSettings_lowf4")
+label_settings = SubResource("LabelSettings_n2aqc")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -140,8 +146,8 @@ offset_left = -316.774
 offset_top = -36.0
 offset_right = 354.226
 offset_bottom = 157.0
-text = "Pressione/Clique
-Para Voltar para o menu"
+text = "Pressione/clique
+para voltar para o menu"
 label_settings = SubResource("LabelSettings_wsmqf")
 horizontal_alignment = 1
 
@@ -170,6 +176,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="DoucesProposta" type="Sprite2D" parent="Base/Escolhas/Douces"]
+position = Vector2(383, 243)
+scale = Vector2(0.45386, 0.45386)
+texture = ExtResource("4_0hrdp")
+flip_h = true
+
 [node name="Sprite" type="Sprite2D" parent="Base/Escolhas/Douces"]
 position = Vector2(869, 258)
 texture = ExtResource("4_5plxr")
@@ -180,20 +192,20 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = -120.0
-offset_right = -349.0
-offset_bottom = 114.0
+offset_left = -12.0
+offset_top = -268.5
+offset_right = -389.0
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Você escolheu mais propostas do Douces!"
+text = "Você escolheu mais minhas propostas!"
 label_settings = SubResource("LabelSettings_lowf4")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimationDouces" type="AnimationPlayer" parent="Base/Escolhas/Douces"]
 libraries = {
-"": SubResource("AnimationLibrary_jkive")
+"": SubResource("AnimationLibrary_jxc4i")
 }
 
 [node name="Lourdes" type="Control" parent="Base/Escolhas"]
@@ -205,6 +217,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LurdesProposta" type="Sprite2D" parent="Base/Escolhas/Lourdes"]
+position = Vector2(385.205, 242.625)
+scale = Vector2(0.455661, 0.453194)
+texture = ExtResource("6_7e4l4")
+
 [node name="Sprite" type="Sprite2D" parent="Base/Escolhas/Lourdes"]
 position = Vector2(869, 258)
 texture = ExtResource("5_m7qoi")
@@ -215,13 +232,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = -120.0
-offset_right = -349.0
-offset_bottom = 114.0
+offset_left = -13.0
+offset_top = -271.5
+offset_right = -390.0
+offset_bottom = 67.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Você escolheu mais propostas do Lourdes!"
+text = "Você escolheu mais minhas propostas!"
 label_settings = SubResource("LabelSettings_lowf4")
 horizontal_alignment = 1
 autowrap_mode = 3

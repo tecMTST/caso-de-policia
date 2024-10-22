@@ -199,11 +199,12 @@ func SelecionarSugestao(sugestao : Sugestao):
 	estado = Estados.MudarTarde	
 	
 func DefinirJogo():
-	if dia < 10:
-		texto_dia.text = "Mês 0" + str(dia)
-	else:
-		texto_dia.text = "Mês " + str(dia)	
-		
+	if dia <= gameData.Configuracoes.LimiteDias:
+		if dia < 10:
+			texto_dia.text = "Mês 0" + str(dia)
+		else:
+			texto_dia.text = "Mês " + str(dia)	
+			
 	if dinheiro <= 0 or criminalidade >= 100 or dia > gameData.Configuracoes.LimiteDias:
 		FinalizarJogo()
 		

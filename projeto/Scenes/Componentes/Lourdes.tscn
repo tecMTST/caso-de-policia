@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2en35wgf36dm"]
+[gd_scene load_steps=15 format=3 uid="uid://b2en35wgf36dm"]
 
 [ext_resource type="Script" path="res://Scenes/Componentes/Conselheiro.gd" id="1_qko8e"]
 [ext_resource type="Texture2D" uid="uid://de3laniybw073" path="res://Assets/Imagens/lurdes_neutro.png" id="2_xq3kg"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bqh7skrugea8w" path="res://Assets/Imagens/lurdes_nao.png" id="4_820i1"]
 [ext_resource type="Texture2D" uid="uid://cwrt5n1v708tu" path="res://Assets/Imagens/lurdes_proposta.svg" id="5_1f2ds"]
 [ext_resource type="Texture2D" uid="uid://dfborj0um5c6e" path="res://Assets/Imagens/douces_cifra.svg" id="5_7u860"]
-[ext_resource type="Texture2D" uid="uid://np8f8kwwyscp" path="res://Assets/Imagens/lurdes_nome.svg" id="6_su48b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jxtn"]
 animations = [{
@@ -177,45 +176,6 @@ _data = {
 "sair": SubResource("Animation_gkias")
 }
 
-[sub_resource type="Animation" id="Animation_lg1aq"]
-length = 20.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_7juhn"]
-resource_name = "rotacao"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PivotNome:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_81toi"]
-_data = {
-"RESET": SubResource("Animation_lg1aq"),
-"rotacao": SubResource("Animation_7juhn")
-}
-
 [node name="Lourdes" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -231,19 +191,6 @@ ImagemBalaoPressed = "res://Assets/Imagens/lurdes_proposta_pressed.svg"
 position = Vector2(375, 0)
 sprite_frames = SubResource("SpriteFrames_8jxtn")
 speed_scale = 0.0
-
-[node name="PivotNome" type="Node2D" parent="Sprite"]
-
-[node name="Nome" type="TextureRect" parent="Sprite/PivotNome"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -79.8049
-offset_top = -231.385
-offset_right = 298.195
-offset_bottom = 13.6147
-scale = Vector2(1.33087, 1.33087)
-texture = ExtResource("6_su48b")
-expand_mode = 2
-stretch_mode = 4
 
 [node name="Balao" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -341,8 +288,3 @@ libraries = {
 "": SubResource("AnimationLibrary_lcpse")
 }
 speed_scale = 0.75
-
-[node name="AnimationNome" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_81toi")
-}

@@ -58,7 +58,7 @@ jobs:
           godot --display-driver headless --verbose --export-release "Web" $(pwd)/build/index.html
 
           mv vendor/coi.min.js build/coi.min.js
-          sed -i '3 i <script src="coi.min.js"></script>' build/index.html
+          # sed -i '3 i <script src="coi.min.js"></script>' build/index.html
           zip -r build.zip build/
           rm -rf build
           mkdir build/
